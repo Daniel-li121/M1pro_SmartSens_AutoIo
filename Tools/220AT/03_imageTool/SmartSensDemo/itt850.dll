@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--========================================================================-->
+<!-- Copyright (c) 2018 Qualcomm Technologies, Inc.                         -->
+<!-- All Rights Reserved.                                                   -->
+<!-- Confidential and Proprietary - Qualcomm Technologies, Inc.             -->
+<!--========================================================================-->
+<sensorDriverData>
+    <module_version major_revision="1" minor_revision="0" incr_revision="0" />
+    <!--Sensor slave information -->
+    <slaveInfo>
+        <!--Name of the sensor -->
+        <sensorName>sc120as</sensorName>
+        <!--8-bit write slave address -->
+        <slaveAddress>0x60</slaveAddress>
+        <!--Register address / data size in bytes -->
+        <regAddrType range="[1,4]">2</regAddrType>
+        <!--Register address / data size in bytes -->
+        <regDataType range="[1,4]">1</regDataType>
+        <!--Frame length lines of frame
+        Typically this value is the active height + blanking height -->
+        <frameLengthLines>3375</frameLengthLines>
+        <!--Maximum frame rate -->
+        <frameRate>30</frameRate>
+        <vm>0x7fff</vm>
+        <vm_ae>0x0</vm_ae>
+        <vm_contrast>0x2</vm_contrast>
+        <vm_tone>0x1</vm_tone>
+        <width>0x3208,0x3209</width>
+        <height>0x320a,0x320b</height>
+    </slaveInfo>
+	<regAddrInfo_EEPROM>
+        <Bridge_En Value="0x92,0x0b">0x3641,0x3034</Bridge_En>
+        <!--接通EEPROM-->
+    </regAddrInfo_EEPROM>
+    <regAddrInfo_PWL>
+        <!--功能使能enable：0x5006[3]-->
+        <Enable>0x5006</Enable>
+        <!--x list：0x5d00 ~ 0x5d1b（一列表格显示，4 byte有效）-->
+        <XList>0x5d00~0x5d1b</XList>
+        <!--y list：0x5d20 ~ 0x5d2d(一列表格显示，2 byte有效)-->
+        <YList>0x5d20~0x5d2d</YList>
+        <!--slope：0x5d30 ~ 0x5d4f（一列表格显示，4 byte有效）-->
+        <SlopeList>0x5d30~0x5d4f</SlopeList>
+    </regAddrInfo_PWL>
+    <regAddrInfo_AE>
+        <Type>0x5019,0x5b8a</Type>
+        <!--combine：    0x5019[3:0] = 0, 0x5b8a[5:4] = 0
+            dcg combine：0x5019[3:0] = 4, 0x5b8a[5:4] = 0
+            me：         0x5019[3:0] = 4, 0x5b8a[5:4] = 1
+            le：         0x5019[3:0] = 4, 0x5b8a[5:4] = 2
+            short：      0x5019[3:0] = 5, 0x5b8a[5:4] = 0
+            lfs          0x5019[3:0] = 6, 0x5b8a[5:4] = 0 -->
+        <MeanLe>0x6711~0x6713</MeanLe>
+        <MeanMe>0x6751~0x6753</MeanMe>
+        <MeanSe>0x6791~0x6793</MeanSe>
+        <MeanLfs>0x67d1~0x67d3</MeanLfs>
+        <MeanComb>0x6811~0x6813</MeanComb>
+        <ExpTimeLe>0x3e00~0x3e02</ExpTimeLe>
+        <!--time LE：0x3e00[7:0], 0x3e01[7:0], 0x3e02[7:4]-->
+        <ExpGainLe>0x3e08~0x3e09</ExpGainLe>
+        <ExpTimeMe>0x3e00~0x3e02</ExpTimeMe>
+        <!--time ME：0x3e00[7:0], 0x3e01[7:0], 0x3e02[7:4]-->
+        <ExpGainMe>0x3e82~0x3e83</ExpGainMe>
+        <ExpTimeSe>0x3e50~0x3e52</ExpTimeSe>
+        <!--time SE：0x3e50[7:0], 0x3e51[7:0], 0x3e52[7:4]-->
+        <ExpGainSe>0x3e58~0x3e59</ExpGainSe>
+        <ExpTimeLfs>0x3e22,0x3e04,0x3e05</ExpTimeLfs>
+        <!--time LFS：0x3e22[7:0], 0x3e04[7:0], 0x3e05[7:4]-->
+        <ExpGainLfs>0x3e12~0x3e13</ExpGainLfs>
+        <LFSThre1>0x5b57</LFSThre1>
+        <!--0x5b57[7:0],-->
+        <LFSThre2>0x5b58,0x5b59</LFSThre2>
+        <!--0x5b58[3:0],0x5b59[7:0],-->
+        <LFSThre3>0x5b5a</LFSThre3>
+        <!--0x5b5a[4:0],-->
+        <LFSThre4>0x5b5b</LFSThre4>
+        <!--0x5b5b[5:0],-->
+        <LFSThre5>0x5b5c</LFSThre5>
+        <!--0x5b5c[7:0],-->
+        <LFSThre6>0x5b5d</LFSThre6>
+        <!--0x5b5d[5:0],-->
+        <LFSThre7>0x5b5e,0x5b5f</LFSThre7>
+        <!--0x5b5e[3:0],0x5b5f[7:0],-->
+        <LFSBloomingEnable>0x5b61</LFSBloomingEnable>
+        <!--0x5b61[6],-->
+    </regAddrInfo_AE>
+    <regAddrInfo_LSC>
+        <Enable>0x5000</Enable>
+        <LSC_LPD_A>0x9e10~0x9eff</LSC_LPD_A>
+        <LSC_LPD_B>0x9d20~0x9e0f</LSC_LPD_B>
+        <LSC_LPD_C>0x9c30~0x9d1f</LSC_LPD_C>
+        <LSC_SPD_A>0x9b40~0x9c2f</LSC_SPD_A>
+        <LSC_SPD_B>0x9a50~0x9b3f</LSC_SPD_B>
+        <LSC_SPD_C>0x9960~0x9a4f</LSC_SPD_C>
+    </regAddrInfo_LSC>
+    <regAddrInfo_WB_CCM>
+        <!-- WB -->
+        <WB_Enable>0x3e1f</WB_Enable>
+        <!-- WB enable：0x3e1f[7] -->
+		    <AwbGainEnable>0x3e1f</AwbGainEnable>
+        <!-- awb gain enable： 0x3e1f[6] -->
+        <LeGr>0x4f00~0x4f01</LeGr>
+        <LeR>0x4f02~0x4f03</LeR>
+        <LeB>0x4f04~0x4f05</LeB>
+        <LeGb>0x4f06~0x4f07</LeGb>
+        <MeGr>0x4f08~0x4f09</MeGr>
+        <MeR>0x4f0a~0x4f0b</MeR>
+        <MeB>0x4f0c~0x4f0d</MeB>
+        <MeGb>0x4f0e~0x4f0f</MeGb>
+        <LfsGr>0x4f10~0x4f11</LfsGr>
+        <LfsR>0x4f12~0x4f13</LfsR>
+        <LfsB>0x4f14~0x4f15</LfsB>
+        <LfsGb>0x4f16~0x4f17</LfsGb>
+        <SeGr>0x4f20~0x4f21</SeGr>
+        <SeR>0x4f22~0x4f23</SeR>
+        <SeB>0x4f24~0x4f25</SeB>
+        <SeGb>0x4f26~0x4f27</SeGb>
+        <CurBGain ReadOnly="1">0x4f04,0x4f05</CurBGain>
+        <CurRGain ReadOnly="1">0x4f02,0x4f03</CurRGain>
+        <CTThreL>0x4765,0x4766</CTThreL>
+        <CTThreM>0x4767,0x4768</CTThreM>
+        <CTThreH>0x4769,0x476a</CTThreH>
+        <BGainL>0x955e,0x955f</BGainL>
+        <RGainL>0x9560,0x9561</RGainL>
+        <GGainL>0x9562,0x9563</GGainL>
+        <BGainM>0x9564,0x9565</BGainM>
+        <RGainM>0x9566,0x9567</RGainM>
+        <GGainM>0x9568,0x9569</GGainM>
+        <BGainH>0x956a,0x956b</BGainH>
+        <RGainH>0x956c,0x956d</RGainH>
+        <GGainH>0x956e,0x956f</GGainH>
+        <OutputBGain ReadOnly="1">0x4f14,0x4f15</OutputBGain>
+        <OutputRGain ReadOnly="1">0x4f12,0x4f13</OutputRGain>
+        <OutputGGain ReadOnly="1">0x4f10,0x4f11</OutputGGain>
+        <!-- CCM -->
+        <CCM_Enable>0x5020</CCM_Enable>
+        <!-- CCM enable：0x5020[0] -->
+        <CCMA_RG>0x5440,0x5441</CCMA_RG>
+        <CCMA_RB>0x5442,0x5443</CCMA_RB>
+        <CCMA_GR>0x5444,0x5445</CCMA_GR>
+        <CCMA_GB>0x5446,0x5447</CCMA_GB>
+        <CCMA_BR>0x5448,0x5449</CCMA_BR>
+        <CCMA_BG>0x544a,0x544b</CCMA_BG>
+        <CCMB_RG>0x5450,0x5451</CCMB_RG>
+        <CCMB_RB>0x5452,0x5453</CCMB_RB>
+        <CCMB_GR>0x5454,0x5455</CCMB_GR>
+        <CCMB_GB>0x5456,0x5457</CCMB_GB>
+        <CCMB_BR>0x5458,0x5459</CCMB_BR>
+        <CCMB_BG>0x545a,0x545b</CCMB_BG>
+        <CCMC_RG>0x5460,0x5461</CCMC_RG>
+        <CCMC_RB>0x5462,0x5463</CCMC_RB>
+        <CCMC_GR>0x5464,0x5465</CCMC_GR>
+        <CCMC_GB>0x5466,0x5467</CCMC_GB>
+        <CCMC_BR>0x5468,0x5469</CCMC_BR>
+        <CCMC_BG>0x546a,0x546b</CCMC_BG>
+    </regAddrInfo_WB_CCM>
+    <regAddrInfo_AE133>
+        <Raw ReadOnly="1">0x6e30</Raw>
+        <PostCurve ReadOnly="1">0x5607</PostCurve>
+        <Exp_Type>0x3e03</Exp_Type>
+        <!--Exp_Type: manual：0x3e03[0]=1，0x3e03 [1]=1-->
+        <!--Exp_Type: auto：0x3e03 [0]=0, 0x3e03 [1]=0-->
+        <Exp_Manual_IntTime>0x3e00,0x3e01,0x3e02</Exp_Manual_IntTime>
+        <Exp_Auto_IntTime_Min>0x5e82,0x5e83</Exp_Auto_IntTime_Min>
+        <Exp_Auto_IntTime_Max>0x5e88,0x5e89</Exp_Auto_IntTime_Max>
+        <AGain_Manual_Gain>0x3e08,0x3e09</AGain_Manual_Gain>
+        <AGain_Auto_Gain_Min>0x5e76,0x5e77</AGain_Auto_Gain_Min>
+        <AGain_Auto_Gain_Max>0x5e7c,0x5e7d</AGain_Auto_Gain_Max> 
+        <ExpGainCGain ReadOnly="1">0x3e00,0x3e01,0x3e02</ExpGainCGain>
+        <ExpGainCEX>0x3e08,0x3e09</ExpGainCEX>
+        <AETarget1>0x5e62</AETarget1>
+        <AETarget2>0x5ee4</AETarget2>
+        <AETarget3>0x5ee5</AETarget3>
+        <AETarget4>0x5ee6</AETarget4>
+        <AETargetThre1>0x5ee8,0x5ee9</AETargetThre1>
+        <!--0x80 is 1x-->
+        <AETargetThre2>0x5eea,0x5eeb</AETargetThre2>
+        <!--0x80 is 1x-->
+        <AETargetThre3>0x5eec,0x5eed</AETargetThre3>
+        <!--0x80 is 1x-->
+        <AETargetThre4>0x5eee,0x5eef</AETargetThre4>
+        <!--0x80 is 1x-->
+        <AESpeedFM>0x5e66</AESpeedFM>
+        <!--expo ae speed-->
+        <AESpeedSM>0x5e67</AESpeedSM>
+        <!--expo ae speed-->      
+        <AETolerance1>0x5e68</AETolerance1>
+        <!--exp ae tolerance: unstable to stable-->
+        <AETolerance2>0x5e69</AETolerance2>
+        <!--exp ae tolerance: stable to unstable-->
+        <ROIMirrorEnable>0x3221</ROIMirrorEnable>
+        <ROILeft>0x6fb0,0x6fb1</ROILeft>
+        <ROITop>0x6fb2,0x6fb3</ROITop>
+        <ROIWidth>0x6fb4,0x6fb5</ROIWidth>
+        <ROIHeight>0x6fb6,0x6fb7</ROIHeight>
+        <ROIXShift>0x3210,0x3211</ROIXShift>
+        <ROIYShift>0x3212,0x3213</ROIYShift>
+        <Block>0x6f80~0x6f8f</Block>
+        <!-- 0x6f80-0x6f8f（每2个bit为一个数值）-->
+    </regAddrInfo_AE133>
+    <regAddrInfo_GAMMA_133>
+        <!--133AT_233AT Gamma-->
+        <GammaA>0x5440~0x5481</GammaA>
+        <GammaB>0x5482~0x54c3</GammaB>
+        <Enable>0x502e</Enable>
+        <!--使能开关[3]-->
+        <Gain_Thresold>0x5420~0x5423</Gain_Thresold>
+        <!--Gain Thresold1: 0x5420,0x5421;Gain Thresold2: 0x5422,0x5423-->
+    </regAddrInfo_GAMMA_133>
+    <regAddrInfo_Contrast133>
+        <Enable>0x502e</Enable>
+        <!--0x502e[4] -->
+        <HightLevelType>0x5600</HightLevelType>
+        <!--0x5600[1], 自动/手动模式切换-->
+        <hight_level_cur_contrast ReadOnly="1">0x5605</hight_level_cur_contrast>
+        <!--0x5605, read-->
+        <hight_level_manual>0x5610</hight_level_manual>
+        <!--0x5610, 手动模式下对比度调整-->
+        <hight_level_auto>0x5610~0x5617</hight_level_auto>
+        <!--0x5610~0x5617 自动模式下随增益自适应-->
+        <low_level_type>0x5600</low_level_type>
+        <!--0x5600[2], 自动/手动模式切换-->
+        <low_level_cur_contrast ReadOnly="1">0x5606</low_level_cur_contrast>
+        <!--0x5606, read-->
+        <low_level_manual>0x5618</low_level_manual>
+        <!--0x5618, 手动模式下对比度调整-->
+        <low_level_auto>0x5618~0x561f</low_level_auto>
+        <!--0x5618~0x561f 自动模式下随增益自适应-->
+        <thre_l>0x5420,0x5421</thre_l>
+        <thre_2>0x5422,0x5423</thre_2>
+        <!--AutoLowLevel133-->
+        <AutoLowLevelEnable>0x502e</AutoLowLevelEnable>
+        <!--0x502e[3] -->
+        <AutoLowLevelType>0x560c</AutoLowLevelType>
+        <!--0x560c[7] -->
+        <ManualLowLevel>0x560c</ManualLowLevel>
+        <!-- 0x560c[6:0]，设置手动输入的low level 变化大小 -->
+        <AutoLowLevel ReadOnly="1">0x5603</AutoLowLevel>
+        <!-- 0x5603，为low level 自动变化时的实际大小 -->
+        <CurGainLowLevel ReadOnly="1">0x5636</CurGainLowLevel>
+        <LowLevelStartGain>0x560d</LowLevelStartGain>
+        <!-- 0x560d设置low level 随增益变化的增益起始值，增益大于这个值，low level开始变化 -->
+        <LowLevelSpeedGain>0x560c</LowLevelSpeedGain>
+        <!-- 0x560c[1:0]，设置low level 随增益变化的快慢，2’b00,2’b01,2’b10,2’b11对应1/8,2/8,3/8,4/8 -->
+        <LowLevelMaxGain>0x560f</LowLevelMaxGain>
+        <!-- 0x560f[3:0]，*4，设置low level随增益变化最大值 -->
+        <LowLevelSpeedTemperature>0x560c</LowLevelSpeedTemperature>
+        <!-- 0x560c[3:2]，设置low level 随温度变化的快慢，2’b00,2’b01,2’b10,2’b11对应0,1,2,4 -->
+        <LowLevelMaxTemperature>0x560f</LowLevelMaxTemperature>
+        <!-- 0x560f[7:4]，*4，设置low level随温度变化最大值 -->
+        <BrightInputChoose>0x560c</BrightInputChoose>
+        <!-- 0x560c[6]，选择不同的亮度输入作为判断，0：选择AE曝光的平均值；1：选择curev之后的平均值 -->
+        <LowLevelStartBright>0x560e</LowLevelStartBright>
+        <!-- 0x560e[3:0]，*8设置low level 随亮度变化的亮度起始值（8bit，高位补零，显示运算后的value），亮度小于这个值，low level开始变化 -->
+        <LowLevelSpeedBright>0x560c</LowLevelSpeedBright>
+        <!-- 0x560c[5:4]，设置low level 随亮度变化的快慢，2’b00,2’b01,2’b10,2’b11对应1/8,2/8,3/8,4/8 -->
+        <LowLevelMaxBright>0x560e</LowLevelMaxBright>
+        <!-- 0x560e[7:4]，*4，设置low level随亮度变化最大值 --> 
+        <!-- TemperatureEigenvalues-->
+        <TemperatureType>0x5602</TemperatureType>
+        <!-- 0x5602[7]=0/1 自动/手动模式切换-->  
+        <TemperatureManualValue>0x5602</TemperatureManualValue>
+        <!-- 0x5602[5:0] 手动调整温度值--> 
+        <TemperatureAutoThre>0x5602</TemperatureAutoThre>
+        <!-- 0x5602[6:0] 温度特征值计算阈值，当高温特征值大于阈值，温度特征值为正，否则为0-->
+        <TemperatureAutoRadio>0x5600</TemperatureAutoRadio>
+        <!-- 0x5600[5:4] 高温特征值计算的ratio，2’b00: 0.5x; 2’b01: 1x; 2’b10: 2x; 2’b11: 4x-->
+        <TemperatureAutoCurValue ReadOnly="1">0x5604</TemperatureAutoCurValue>
+        <!-- 0x5604 当前的温度特征值计算值 -->
+        <!--HTemp133-->
+        <HTempEnable>0x5ec5</HTempEnable>
+        <!--Enable :0x5ec5[0]=1-->
+        <HTempType>0x5630</HTempType>
+        <!--0x5630[7], 自动/手动模式切换-->
+        <ManualMaxGain>0x5633</ManualMaxGain>
+        <!--Manual max gain :0x5633[7:0] *16-->
+        <AutoMaxGain ReadOnly="1">0x5634,0x5635</AutoMaxGain>
+        <!--Auto max gain :0x5634[3:0] 0x5635[7:0]-->
+        <CurrentHTempValue ReadOnly="1">0x5604</CurrentHTempValue>
+        <!--当前高温值 :0x5604[5:0]-->
+        <InHTempThre>0x5630</InHTempThre>
+        <!--In high temp threshold :0x5630[3:0]*2 + 0x5630[6:4]-->
+        <OutHTempThre>0x5630</OutHTempThre>
+        <!--In high temp threshold :0x5630[3:0]*2 - 0x5630[6:4]-->
+        <ManualTestEnabele>0x5602</ManualTestEnabele>
+        <!--0x5602[7] -->
+        <ManualTest>0x5602</ManualTest>
+        <!--0x5602[5:0] -->
+        <MaxGainAdjustSpeed>0x5631</MaxGainAdjustSpeed>
+        <!--Max gain adjust speed :0x5631[3:0]-->
+        <MaxGainAdjustSpeedMin>0x5632</MaxGainAdjustSpeedMin>
+        <!--Max gain adjust speed minimum:0x5632[3:0]-->
+        <MaxGainAdjustSpeedMax>0x5632</MaxGainAdjustSpeedMax>
+        <!--Max gain adjust speed Maximum:0x5632[7:4]*4-->
+    </regAddrInfo_Contrast133>
+    <regAddrInfo_NR_133>
+        <!--NR公共寄存器-->
+        <ManualGainEnable>0x5300</ManualGainEnable>
+        <!--开关0x5300[4]-->
+        <ManualGain>0x5327~0x5328</ManualGain>
+        <!--手动设置当前生效增益-->
+        <GainNode>0x531b~0x5326</GainNode>
+        <!--GainNode 1~6，每16bit为一个值-->
+        <!--NR-Normal Tab-->
+        <SharpNode>0x5308~0x530d</SharpNode>
+        <!--SharpNode 1~3，每16bit为一个值-->
+        <FilterH1>0x530e~0x5310</FilterH1>
+        <!--FilterH1 1~3，每8bit为一个值-->
+        <FilterH2>0x5311~0x5313</FilterH2>
+        <!--FilterH2 1~3，每8bit为一个值-->
+        <FilterM1>0x5314~0x5316</FilterM1>
+        <!--FilterM1 1~3，每8bit为一个值-->
+        <FilterM2>0x5317~0x5319</FilterM2>
+        <!--FilterM2 1~3，每8bit为一个值-->
+        <EdgeRat>0x532a~0x532f</EdgeRat>
+        <!--EdgeRat 1~6，每8bit为一个值-->
+        <NoiseAmp>0x5376~0x537b</NoiseAmp>
+        <!--NoiseAmp 1~6，每8bit为一个值-->
+        <NoiseLevel>0x5368~0x5375</NoiseLevel>
+        <!--NoiseLevel 1~14，每8bit为一个值-->
+        <!--NR-DNS Tab-->
+        <DNSEnable>0x5300</DNSEnable>
+        <!--开关0x5300[0]-->
+        <DnsFlatInt>0x5330~0x5335</DnsFlatInt>
+        <!--DnsFlatInt 1~6，每8bit为一个值-->
+        <DnsFlatCoe>0x5336~0x533b</DnsFlatCoe>
+        <!--DnsFlatCoe 1~6，每8bit为一个值-->
+        <DnsEdgeInt>0x533c~0x5341</DnsEdgeInt>
+        <!--DnsEdgeInt 1~6，每8bit为一个值-->
+        <DnsEdgeCoe>0x5342~0x5347</DnsEdgeCoe>
+        <!--DnsEdgeCoe 1~6，每8bit为一个值-->
+        <DnsAddBack>0x5360~0x5365</DnsAddBack>
+        <!--DnsAddBack 1~6，每8bit为一个值-->
+    </regAddrInfo_NR_133>
+    <regAddrInfo_Sharpness_133>
+        <!--133AT_233AT Sharpness-->
+        <ManualGainEnable>0x5300</ManualGainEnable>
+        <!--开关0x5300[4]-->
+        <ManualGain>0x5327,0x5328</ManualGain>
+        <!--手动设置当前生效增益-->
+        <GainNode>0x531b~0x5326</GainNode>
+        <!--GainNode 1~6，每16bit为一个值-->
+        <Enable>0x5300</Enable>
+        <!--开关0x5300[1]-->
+        <SharpWhiteCoe>0x5348~0x534d</SharpWhiteCoe>
+        <!--SharpWhiteCoe 1~6，每8bit为一个值-->
+        <SharpWhiteTht>0x534e~0x5353</SharpWhiteTht>
+        <!--SharpWhiteTht 1~6，每8bit为一个值-->
+        <SharpBlackCoe>0x5354~0x5359</SharpBlackCoe>
+        <!--SharpBlackCoe 1~6，每8bit为一个值-->
+        <SharpBlackTht>0x535a~0x535f</SharpBlackTht>
+        <!--SharpBlackTht 1~6，每8bit为一个值-->
+        <SharpAddBack>0x537c~0x5381</SharpAddBack>
+        <!--SharpAddBack 1~6，每8bit为一个值-->
+    </regAddrInfo_Sharpness_133>
+    <regAddrInfo_LSC_133>
+        <!--133AT_233AT LSC-->
+        <Enable>0x502e</Enable>
+        <!--开关0x502e[1]-->
+        <LSC>0x8de0~0x8e2f</LSC>
+        <!--80个寄存器，每8bit为一个值-->
+    </regAddrInfo_LSC_133>
+    <SavePageData>
+        <AESaveData>
+            <!--savepage reg list-->
+            <regCnt>0</regCnt>
+        </AESaveData>
+        <WBCCMSaveData>
+            <!--savepage reg list-->
+            <regCnt>0</regCnt>
+        </WBCCMSaveData>
+        <PWLSaveData>
+            <!--savepage reg list-->
+            <regCnt>0</regCnt>
+        </PWLSaveData>
+        <LSCSaveData>
+            <!--savepage reg list-->
+            <regCnt>0</regCnt>
+        </LSCSaveData>
+        <AE133SaveData>
+            <!--savepage reg list-->
+            <regCnt>56</regCnt>
+            <reg0>0x3e03,0x00</reg0>			
+            <reg1>0x3e00,0x00</reg1>
+            <reg2>0x3e01,0x02</reg2>
+            <reg3>0x3e02,0x00</reg3>
+            <reg4>0x5e82,0x08</reg4>
+            <reg5>0x5e83,0x00</reg5>
+            <reg6>0x5e88,0x0b</reg6>
+            <reg7>0x5e89,0xe8</reg7>			
+            <reg8>0x3e08,0x00</reg8>
+            <reg9>0x3e09,0x10</reg9>
+            <reg10>0x5e76,0x00</reg10>
+            <reg11>0x5e77,0x40</reg11>
+            <reg12>0x5e7c,0x0c</reg12>
+            <reg13>0x5e7d,0x00</reg13>
+            <reg14>0x3e06,0x00</reg14>
+            <reg15>0x3e07,0x80</reg15>
+            <reg16>0x5e62,0x48</reg16>
+            <reg17>0x5ee4,0x30</reg17>
+            <reg18>0x5ee5,0x20</reg18>
+            <reg19>0x5ee6,0x18</reg19>
+            <reg20>0x5ee8,0x0c</reg20>
+            <reg21>0x5ee9,0x69</reg21>
+            <reg22>0x5eea,0x31</reg22>
+            <reg23>0x5eeb,0xa4</reg23>
+            <reg24>0x5eec,0xc6</reg24>
+            <reg25>0x5eed,0x90</reg25>
+            <reg26>0x5eee,0xff</reg26>
+            <reg27>0x5eef,0x00</reg27>
+            <reg28>0x5e66,0x30</reg28>
+            <reg29>0x5ee7,0x04</reg29>
+            <reg30>0x5e68,0x04</reg30>
+            <reg31>0x5e69,0x08</reg31>
+            <reg32>0x6fb0,0x00</reg32>
+            <reg33>0x6fb1,0x00</reg33>
+            <reg34>0x6fb2,0x00</reg34>
+            <reg35>0x6fb3,0x00</reg35>
+            <reg36>0x6fb4,0x05</reg36>
+            <reg37>0x6fb5,0x00</reg37>
+            <reg38>0x6fb6,0x03</reg38>
+            <reg39>0x6fb7,0xc0</reg39>
+            <reg40>0x6f80,0xff</reg40>
+            <reg41>0x6f81,0xff</reg41>
+            <reg42>0x6f82,0xff</reg42>
+            <reg43>0x6f83,0xff</reg43>
+            <reg44>0x6f84,0xff</reg44>
+            <reg45>0x6f85,0xff</reg45>
+            <reg46>0x6f86,0xff</reg46>
+            <reg47>0x6f87,0xff</reg47>
+            <reg48>0x6f88,0xff</reg48>
+            <reg49>0x6f89,0xff</reg49>
+            <reg50>0x6f8a,0xff</reg50>
+            <reg51>0x6f8b,0xff</reg51>
+            <reg52>0x6f8c,0xff</reg52>
+            <reg53>0x6f8d,0xff</reg53>
+            <reg54>0x6f8e,0xff</reg54>
+            <reg55>0x6f8f,0xff</reg55>
+        </AE133SaveData>
+        <Contrast133SaveData>
+            <!--savepage reg list-->
+            <regCnt>37</regCnt>
+            <reg0>0x502e,0x3c</reg0>			
+            <reg1>0x5600,0x01</reg1>			
+            <reg2>0x5610,0x40</reg2>
+            <reg3>0x5611,0x40</reg3>
+            <reg4>0x5612,0x40</reg4>
+            <reg5>0x5613,0x40</reg5>
+            <reg6>0x5614,0x40</reg6>
+            <reg7>0x5615,0x40</reg7>
+            <reg8>0x5616,0x40</reg8>
+            <reg9>0x5617,0x40</reg9>			
+            <reg10>0x5605,0x40</reg10>
+            <reg11>0x5618,0x40</reg11>
+            <reg12>0x5619,0x40</reg12>
+            <reg13>0x561a,0x40</reg13>
+            <reg14>0x561b,0x40</reg14>
+            <reg15>0x561c,0x40</reg15>
+            <reg16>0x561d,0x40</reg16>
+            <reg17>0x561e,0x40</reg17>
+            <reg18>0x561f,0x40</reg18>
+            <reg19>0x5606,0x10</reg19>
+            <reg20>0x560c,0x22</reg20>
+            <reg21>0x5603,0x00</reg21>			
+            <reg22>0x5636,0x00</reg22>
+            <reg23>0x560d,0x30</reg23>
+            <reg24>0x560c,0x22</reg24>
+            <reg25>0x560f,0x44</reg25>
+            <reg26>0x560e,0x48</reg26>
+            <reg27>0x5602,0x80</reg27>			
+            <reg28>0x5600,0x01</reg28>
+            <reg29>0x5604,0x00</reg29>			
+            <reg30>0x5630,0x38</reg30>			
+            <reg31>0x5633,0x00</reg31>
+            <reg32>0x5634,0x00</reg32>
+            <reg33>0x5635,0x00</reg33>
+            <reg34>0x5631,0x08</reg34>
+            <reg35>0x5632,0x84</reg35>
+            <reg36>0x5ec5,0x00</reg36>
+        </Contrast133SaveData>
+        <NR133SaveData>
+            <!--savepage reg list-->
+            <regCnt>119</regCnt>
+            <reg0>0x5300,0x0f</reg0>
+            <reg1>0x530e,0x00</reg1>
+            <reg2>0x530f,0x00</reg2>
+            <reg3>0x5310,0x00</reg3>
+            <reg4>0x5311,0x18</reg4>
+            <reg5>0x5312,0x23</reg5>
+            <reg6>0x5313,0x2a</reg6>
+            <reg7>0x5314,0x19</reg7>
+            <reg8>0x5315,0x1d</reg8>
+            <reg9>0x5316,0x22</reg9>
+            <reg10>0x5317,0x1a</reg10>
+            <reg11>0x5318,0x1a</reg11>
+            <reg12>0x5319,0x1a</reg12>
+            <reg13>0x532a,0x02</reg13>
+            <reg14>0x532b,0x02</reg14>
+            <reg15>0x532c,0x02</reg15>
+            <reg16>0x532d,0x02</reg16>
+            <reg17>0x532e,0x02</reg17>
+            <reg18>0x532f,0x02</reg18>			
+            <reg19>0x5376,0x01</reg19>
+            <reg20>0x5377,0x02</reg20>
+            <reg21>0x5378,0x03</reg21>
+            <reg22>0x5379,0x04</reg22>
+            <reg23>0x537a,0x06</reg23>
+            <reg24>0x537b,0x08</reg24>
+            <reg25>0x531b,0x00</reg25>
+            <reg26>0x531c,0x10</reg26>
+            <reg27>0x531d,0x00</reg27>
+            <reg28>0x531e,0x40</reg28>
+            <reg29>0x531f,0x00</reg29>
+            <reg30>0x5320,0x80</reg30>
+            <reg31>0x5321,0x01</reg31>
+            <reg32>0x5322,0x00</reg32>
+            <reg33>0x5323,0x02</reg33>
+            <reg34>0x5324,0x00</reg34>
+            <reg35>0x5325,0x04</reg35>
+            <reg36>0x5326,0x00</reg36>
+            <reg37>0x5308,0x00</reg37>
+            <reg38>0x5309,0x10</reg38>
+            <reg39>0x530a,0x00</reg39>
+            <reg40>0x530b,0x40</reg40>
+            <reg41>0x530c,0x00</reg41>
+            <reg42>0x530d,0x80</reg42>
+            <reg43>0x5368,0xd0</reg43>
+            <reg44>0x5369,0xd0</reg44>
+            <reg45>0x536a,0xd0</reg45>
+            <reg46>0x536b,0xd0</reg46>
+            <reg47>0x536c,0xd0</reg47>
+            <reg48>0x536d,0xd0</reg48>
+            <reg49>0x536e,0x90</reg49>
+            <reg50>0x536f,0x70</reg50>
+            <reg51>0x5370,0x60</reg51>
+            <reg52>0x5371,0x20</reg52>
+            <reg53>0x5372,0x12</reg53>
+            <reg54>0x5373,0x10</reg54>
+            <reg55>0x5374,0x0a</reg55>
+            <reg56>0x5375,0x03</reg56>
+            <reg57>0x5330,0x24</reg57>
+            <reg58>0x5331,0x36</reg58>
+            <reg59>0x5332,0x40</reg59>
+            <reg60>0x5333,0x50</reg60>
+            <reg61>0x5334,0x60</reg61>
+            <reg62>0x5335,0x80</reg62>			
+            <reg63>0x5336,0x18</reg63>
+            <reg64>0x5337,0x20</reg64>
+            <reg65>0x5338,0x28</reg65>
+            <reg66>0x5339,0x30</reg66>
+            <reg67>0x533a,0x40</reg67>
+            <reg68>0x533b,0x60</reg68>
+            <reg69>0x5360,0x06</reg69>
+            <reg70>0x5361,0x04</reg70>
+            <reg71>0x5362,0x04</reg71>
+            <reg72>0x5363,0x02</reg72>
+            <reg73>0x5364,0x02</reg73>
+            <reg74>0x5365,0x02</reg74>
+            <reg75>0x533c,0x32</reg75>
+            <reg76>0x533d,0x55</reg76>
+            <reg77>0x533e,0x6e</reg77>
+            <reg78>0x533f,0x82</reg78>
+            <reg79>0x5340,0xd0</reg79>
+            <reg80>0x5341,0xf0</reg80>
+            <reg81>0x5342,0x23</reg81>
+            <reg82>0x5343,0x3c</reg82>
+            <reg83>0x5344,0x48</reg83>
+            <reg84>0x5345,0x5a</reg84>
+            <reg85>0x5346,0x73</reg85>
+            <reg86>0x5347,0xa8</reg86>
+            <reg87>0x5348,0xc8</reg87>
+            <reg88>0x5349,0xc8</reg88>
+            <reg89>0x534a,0xc8</reg89>
+            <reg90>0x534b,0xc8</reg90>
+            <reg91>0x534c,0xc8</reg91>
+            <reg92>0x534d,0xc8</reg92>
+            <reg93>0x534e,0x6d</reg93>
+            <reg94>0x534f,0x50</reg94>
+            <reg95>0x5350,0x40</reg95>
+            <reg96>0x5351,0x32</reg96>
+            <reg97>0x5352,0x28</reg97>
+            <reg98>0x5353,0x20</reg98>
+            <reg99>0x537c,0x02</reg99>
+            <reg100>0x537d,0x02</reg100>
+            <reg101>0x537e,0x02</reg101>
+            <reg102>0x537f,0x01</reg102>
+            <reg103>0x5380,0x01</reg103>
+            <reg104>0x5381,0x01</reg104>
+            <reg105>0x5354,0xc8</reg105>
+            <reg106>0x5355,0xc8</reg106>
+            <reg107>0x5356,0xc8</reg107>
+            <reg108>0x5357,0xc8</reg108>
+            <reg109>0x5358,0xc8</reg109>
+            <reg110>0x5359,0xc8</reg110>
+            <reg111>0x535a,0x6d</reg111>
+            <reg112>0x535b,0x50</reg112>
+            <reg113>0x535c,0x40</reg113>
+            <reg114>0x535d,0x32</reg114>
+            <reg115>0x535e,0x28</reg115>
+            <reg116>0x535f,0x20</reg116>
+            <reg117>0x5327,0x00</reg117>
+            <reg118>0x5328,0x00</reg118>
+        </NR133SaveData>
+        <LSC133SaveData>
+            <!--savepage reg list-->
+            <regCnt>81</regCnt>
+            <reg0>0x502e,0x87</reg0>
+            <reg1>0x8de0,0x00</reg1>
+            <reg2>0x8de1,0x00</reg2>
+            <reg3>0x8de2,0x00</reg3>
+            <reg4>0x8de3,0x00</reg4>
+            <reg5>0x8de4,0x00</reg5>
+            <reg6>0x8de5,0x00</reg6>
+            <reg7>0x8de6,0x00</reg7>
+            <reg8>0x8de7,0x00</reg8>
+            <reg9>0x8de8,0x00</reg9>
+            <reg10>0x8de9,0x00</reg10>
+            <reg11>0x8dea,0x00</reg11>
+            <reg12>0x8deb,0x00</reg12>
+            <reg13>0x8dec,0x00</reg13>
+            <reg14>0x8ded,0x00</reg14>
+            <reg15>0x8dee,0x00</reg15>
+            <reg16>0x8def,0x00</reg16>
+            <reg17>0x8df0,0x00</reg17>
+            <reg18>0x8df1,0x00</reg18>
+            <reg19>0x8df2,0x00</reg19>
+            <reg20>0x8df3,0x00</reg20>
+            <reg21>0x8df4,0x00</reg21>
+            <reg22>0x8df5,0x00</reg22>
+            <reg23>0x8df6,0x00</reg23>
+            <reg24>0x8df7,0x00</reg24>
+            <reg25>0x8df8,0x00</reg25>
+            <reg26>0x8df9,0x00</reg26>
+            <reg27>0x8dfa,0x00</reg27>
+            <reg28>0x8dfb,0x00</reg28>
+            <reg29>0x8dfc,0x00</reg29>
+            <reg30>0x8dfd,0x00</reg30>
+            <reg31>0x8dfe,0x00</reg31>
+            <reg32>0x8dff,0x00</reg32>
+            <reg33>0x8e00,0x00</reg33>
+            <reg34>0x8e01,0x00</reg34>
+            <reg35>0x8e02,0x00</reg35>
+            <reg36>0x8e03,0x00</reg36>
+            <reg37>0x8e04,0x00</reg37>
+            <reg38>0x8e05,0x00</reg38>
+            <reg39>0x8e06,0x00</reg39>
+            <reg40>0x8e07,0x00</reg40>
+            <reg41>0x8e08,0x00</reg41>
+            <reg42>0x8e09,0x00</reg42>
+            <reg43>0x8e0a,0x00</reg43>
+            <reg44>0x8e0b,0x00</reg44>
+            <reg45>0x8e0c,0x00</reg45>
+            <reg46>0x8e0d,0x00</reg46>
+            <reg47>0x8e0e,0x00</reg47>
+            <reg48>0x8e0f,0x00</reg48>
+            <reg49>0x8e10,0x00</reg49>
+            <reg50>0x8e11,0x00</reg50>
+            <reg51>0x8e12,0x00</reg51>
+            <reg52>0x8e13,0x00</reg52>
+            <reg53>0x8e14,0x00</reg53>
+            <reg54>0x8e15,0x00</reg54>
+            <reg55>0x8e16,0x00</reg55>
+            <reg56>0x8e17,0x00</reg56>
+            <reg57>0x8e18,0x00</reg57>
+            <reg58>0x8e19,0x00</reg58>
+            <reg59>0x8e1a,0x00</reg59>
+            <reg60>0x8e1b,0x00</reg60>
+            <reg61>0x8e1c,0x00</reg61>
+            <reg62>0x8e1d,0x00</reg62>
+            <reg63>0x8e1e,0x00</reg63>
+            <reg64>0x8e1f,0x00</reg64>
+            <reg65>0x8e20,0x00</reg65>
+            <reg66>0x8e21,0x00</reg66>
+            <reg67>0x8e22,0x00</reg67>
+            <reg68>0x8e23,0x00</reg68>
+            <reg69>0x8e24,0x00</reg69>
+            <reg70>0x8e25,0x00</reg70>
+            <reg71>0x8e26,0x00</reg71>
+            <reg72>0x8e27,0x00</reg72>
+            <reg73>0x8e28,0x00</reg73>
+            <reg74>0x8e29,0x00</reg74>
+            <reg75>0x8e2a,0x00</reg75>
+            <reg76>0x8e2b,0x00</reg76>
+            <reg77>0x8e2c,0x00</reg77>
+            <reg78>0x8e2d,0x00</reg78>
+            <reg79>0x8e2e,0x00</reg79>
+            <reg80>0x8e2f,0x00</reg80>
+        </LSC133SaveData>
+    </SavePageData>
+</sensorDriverData>

@@ -1,0 +1,1991 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--========================================================================-->
+<!-- Copyright (c) 2018 Qualcomm Technologies, Inc.                         -->
+<!-- All Rights Reserved.                                                   -->
+<!-- Confidential and Proprietary - Qualcomm Technologies, Inc.             -->
+<!--========================================================================-->
+<sensorDriverData>
+    <module_version major_revision="1" minor_revision="0" incr_revision="0" />
+    <!--Sensor slave information -->
+    <slaveInfo>
+        <!--Name of the sensor -->
+        <sensorName>sc120as</sensorName>
+        <!--8-bit write slave address -->
+        <slaveAddress>0x60</slaveAddress>
+        <!--Register address / data size in bytes -->
+        <regAddrType range="[1,4]">2</regAddrType>
+        <!--Register address / data size in bytes -->
+        <regDataType range="[1,4]">1</regDataType>
+        <!--Frame length lines of frame
+        Typically this value is the active height + blanking height -->
+        <frameLengthLines>3375</frameLengthLines>
+        <!--Maximum frame rate -->
+        <frameRate>30</frameRate>
+        <vm>0x7fff</vm>
+        <vm_ae>0x80</vm_ae>
+        <vm_contrast>0x2</vm_contrast>
+        <vm_tone>0x1</vm_tone>
+        <width>0x3208,0x3209</width>
+        <height>0x320a,0x320b</height>
+    </slaveInfo>
+    <E2DataConstruct>
+        <!--SC121AT-->
+        <RegMap>
+            <AE>
+                <rangeCnt>4</rangeCnt>
+                <regrange_0>0x303e,0x303e</regrange_0>
+                <regrange_1>0x3e00,0x3eff</regrange_1>
+                <regrange_2>0x5e00,0x5eef</regrange_2>
+                <regrange_3>0x6ec0,0x6ecc</regrange_3>
+            </AE>
+            <LSC>
+                <switchCnt>1</switchCnt>
+                <rangeCnt>2</rangeCnt>
+                <switch_0>0x5000</switch_0>
+                <regrange_0>0x5210,0x521b</regrange_0>
+                <regrange_1>0x8de0,0x8ecf</regrange_1>
+            </LSC>
+            <AWB>
+                <switchCnt>2</switchCnt>
+                <rangeCnt>2</rangeCnt>
+                <switch_0>0x5ab0</switch_0>
+                <switch_1>0x5ac0</switch_1>
+                <regrange_0>0x5aa8,0x5aae</regrange_0>
+                <regrange_1>0x5ab0,0x5aef</regrange_1>
+            </AWB>
+            <CAC>
+                <switchCnt>0</switchCnt>
+                <rangeCnt>3</rangeCnt>
+                <regrange_0>0x6080,0x608f</regrange_0>
+                <regrange_1>0x6180,0x618f</regrange_1>
+                <regrange_2>0x6280,0x628f</regrange_2>
+            </CAC>
+            <CCM>
+                <switchCnt>0</switchCnt>
+                <rangeCnt>2</rangeCnt>
+                <regrange_0>0x5118,0x512f</regrange_0>
+                <regrange_1>0x5102,0x5105</regrange_1>
+            </CCM>
+            <CON>
+                <switchCnt>2</switchCnt>
+                <rangeCnt>6</rangeCnt>
+                <switch_0>0x500c</switch_0>
+                <switch_1>0x5101</switch_1>
+                <regrange_0>0x510e,0x5111</regrange_0>
+                <regrange_1>0x51e6,0x51f1</regrange_1>
+                <regrange_2>0x5290,0x529f</regrange_2>
+                <regrange_3>0x52ad,0x52ae</regrange_3>
+                <regrange_4>0x5a96,0x5aae</regrange_4>
+                <regrange_5>0x52b9,0x52bb</regrange_5>
+            </CON>
+            <HDR>
+                <switchCnt>0</switchCnt>
+                <rangeCnt>4</rangeCnt>
+                <regrange_0>0x5d00,0x5df7</regrange_0>
+                <regrange_1>0x608E,0x608E</regrange_1>
+                <regrange_2>0x5B00,0x5B57</regrange_2>
+                <regrange_3>0x51F4,0x51F6</regrange_3>
+            </HDR>
+            <Gamma>
+                <switchCnt>0</switchCnt>
+                <rangeCnt>2</rangeCnt>
+                <regrange_0>0x5140,0x5181</regrange_0>
+                <regrange_1>0x5182,0x51c3</regrange_1>
+            </Gamma>
+            <HFPCurve>
+                <switchCnt>0</switchCnt>
+                <rangeCnt>2</rangeCnt>
+                <regrange_0>0x6300,0x6341</regrange_0>
+                <regrange_1>0x6342,0x6383</regrange_1>
+            </HFPCurve>
+            <SAT>
+                <switchCnt>6</switchCnt>
+                <rangeCnt>5</rangeCnt>
+                <switch_0>0x500c</switch_0>
+                <switch_1>0x5100</switch_1>
+                <switch_2>0x5280</switch_2>
+                <switch_3>0x52ad</switch_3>
+                <switch_4>0x5ae7</switch_4>
+                <switch_5>0x60be</switch_5>
+                <regrange_0>0x5107,0x5107</regrange_0>
+                <regrange_1>0x51dc,0x51df</regrange_1>
+                <regrange_2>0x5282,0x52b8</regrange_2>
+                <regrange_3>0x5a90,0x5a95</regrange_3>
+                <regrange_4>0x608f,0x608f</regrange_4>
+            </SAT>
+            <NR>
+                <switchCnt>5</switchCnt>
+                <rangeCnt>5</rangeCnt>
+                <switch_0>0x60e0</switch_0>
+                <switch_1>0x61e0</switch_1>
+                <switch_2>0x62e0</switch_2>
+                <switch_3>0x60bf</switch_3>
+                <switch_4>0x61bf</switch_4>
+                <regrange_0>0x60c0,0x60ef</regrange_0>
+                <regrange_1>0x61c0,0x61ef</regrange_1>
+                <regrange_2>0x60b0,0x60be</regrange_2>
+                <regrange_3>0x61b0,0x61be</regrange_3>
+                <regrange_4>0x62eb,0x62ec</regrange_4>
+            </NR>
+            <Sharpness>
+                <switchCnt>3</switchCnt>
+                <rangeCnt>3</rangeCnt>
+                <switch_0>0x60e6</switch_0>
+                <switch_1>0x61e6</switch_1>
+                <switch_2>0x62e6</switch_2>
+                <regrange_0>0x60d5,0x60e2</regrange_0>
+                <regrange_1>0x61d5,0x61e2</regrange_1>
+                <regrange_2>0x62e2,0x62e9</regrange_2>
+            </Sharpness>
+            <HTEMP>
+                <switchCnt>3</switchCnt>
+                <rangeCnt>2</rangeCnt>
+                <switch_0>0x500c</switch_0>
+                <switch_1>0x5e00</switch_1>
+                <switch_2>0x5032</switch_2>
+                <regrange_0>0x52b0,0x52b5</regrange_0>
+                <regrange_1>0x52ad,0x52ae</regrange_1>
+            </HTEMP>
+            <ISPC>
+                <switchCnt>8</switchCnt>
+                <switch_0>0x7532</switch_0>
+                <switch_1>0x57db</switch_1>
+                <switch_2>0x57dc</switch_2>
+                <switch_3>0x7540</switch_3>
+                <switch_4>0x7545</switch_4>
+                <switch_5>0x7548</switch_5>
+                <switch_6>0x4739</switch_6>
+                <switch_7>0x4719</switch_7>
+                <SubModule>
+                    <code>
+                        <switchCnt>0</switchCnt>
+                        <rangeCnt>1</rangeCnt>
+                        <regrange_0>0x8500,0x8d48</regrange_0>
+                    </code>
+                    <HDR>
+                        <switchCnt>0</switchCnt>
+                        <rangeCnt>2</rangeCnt>
+                        <regrange_0>0x84d4,0x84db</regrange_0>
+                        <regrange_1>0x8300,0x833f</regrange_1>
+                    </HDR>
+                    <Gamma_HFPCurve>
+                        <switchCnt>0</switchCnt>
+                        <rangeCnt>4</rangeCnt>
+                        <regrange_0>0x8340,0x83c3</regrange_0>
+                        <regrange_1>0x83c4,0x8447</regrange_1>
+                        <regrange_2>0x8448,0x84cb</regrange_2>
+                        <regrange_3>0x84cc,0x84cf</regrange_3>
+                    </Gamma_HFPCurve>
+                    <CCM>
+                        <switchCnt>0</switchCnt>
+                        <rangeCnt>2</rangeCnt>
+                        <regrange_0>0x7514,0x7515</regrange_0>
+                        <regrange_1>0x7400,0x7425</regrange_1>
+                    </CCM>
+                    <LTMBLC>
+                        <switchCnt>1</switchCnt>
+                        <rangeCnt>1</rangeCnt>
+                        <switch_0>0x5d9f</switch_0>
+                        <regrange_0>0x7500,0x7511</regrange_0>,keyui
+                    </LTMBLC>
+                </SubModule>
+            </ISPC>
+        </RegMap>
+        <LinkageReg>
+            <RegCnt>46</RegCnt>
+            <WinReg_0>0x3200</WinReg_0>
+            <WinReg_1>0x3201</WinReg_1>
+            <WinReg_2>0x3202</WinReg_2>
+            <WinReg_3>0x3203</WinReg_3>
+            <WinReg_4>0x3204</WinReg_4>
+            <WinReg_5>0x3205</WinReg_5>
+            <WinReg_6>0x3206</WinReg_6>
+            <WinReg_7>0x3207</WinReg_7>
+            <WinReg_8>0x3208</WinReg_8>
+            <WinReg_9>0x3209</WinReg_9>
+            <WinReg_10>0x320a</WinReg_10>
+            <WinReg_11>0x320b</WinReg_11>
+            <WinReg_12>0x3210</WinReg_12>
+            <WinReg_13>0x3211</WinReg_13>
+            <WinReg_14>0x3212</WinReg_14>
+            <WinReg_15>0x3213</WinReg_15>
+            <WinReg_16>0x5e18</WinReg_16>
+            <WinReg_17>0x5e19</WinReg_17>
+            <WinReg_18>0x5e1a</WinReg_18>
+            <WinReg_19>0x5e1b</WinReg_19>
+            <WinReg_20>0x6ec0</WinReg_20>
+            <WinReg_21>0x6ec1</WinReg_21>
+            <WinReg_22>0x6ec2</WinReg_22>
+            <WinReg_23>0x6ec3</WinReg_23>
+            <WinReg_24>0x5aa8</WinReg_24>
+            <WinReg_25>0x5aa9</WinReg_25>
+            <WinReg_26>0x5aaa</WinReg_26>
+            <WinReg_27>0x5aab</WinReg_27>
+            <WinReg_28>0x5210</WinReg_28>
+            <WinReg_29>0x5211</WinReg_29>
+            <WinReg_30>0x5212</WinReg_30>
+            <WinReg_31>0x5213</WinReg_31>
+            <WinReg_32>0x320c</WinReg_32>
+            <WinReg_33>0x320d</WinReg_33>
+            <WinReg_34>0x320e</WinReg_34>
+            <WinReg_35>0x320f</WinReg_35>
+            <WinReg_36>0x3222</WinReg_36>
+            <WinReg_37>0x3035</WinReg_37>
+            <WinReg_38>0x3002</WinReg_38>
+            <WinReg_39>0x5e88</WinReg_39>
+            <WinReg_40>0x5e89</WinReg_40>
+            <WinReg_41>0x5e89</WinReg_41>
+            <WinReg_42>0x5e8a</WinReg_42>
+            <WinReg_43>0x5e8b</WinReg_43>
+            <WinReg_44>0x5e8c</WinReg_44>
+            <WinReg_45>0x5e8d</WinReg_45>
+        </LinkageReg>
+    </E2DataConstruct>
+    <regAddrInfo_Option>
+        <ISP_En>xxx</ISP_En>
+        <AE_En>0x303e</AE_En>
+        <!--manual：0x3000[7]=0,0x3000[3]=1；auto：0x3000[7]=1,0x3000[3]=0-->
+        <BLC_En>xxx</BLC_En>
+        <LSC_En>0x5000</LSC_En>
+        <!--0x5000[5]-->
+        <Gamma_En>xxx</Gamma_En>
+        <WB_En>xxx</WB_En>
+        <CCM_En>0x5100</CCM_En>
+        <!--0x5100[0]-->
+        <Saturation_En>xxx</Saturation_En>
+        <Contrast_En>xxx</Contrast_En>
+        <Tonemapping_En>xxx</Tonemapping_En>
+        <Sharpness_En>xxx</Sharpness_En>
+        <GB_En>xxx</GB_En>
+        <CAC_En>xxx</CAC_En>
+        <NR_En>0x5000</NR_En>
+        <!--0x5000[3]-->
+        <Check>0x4992~0x4997,0x4743</Check>
+        <!--self-checking-->
+        <Bridge_En Value="0x80,0x10">0x3641,0x3032</Bridge_En>
+        <!--接通EEPROM-->
+    </regAddrInfo_Option>
+    <regAddrInfo_AE>
+        <ExpTimeType>0x303e</ExpTimeType>
+        <!--manual：0x303e[7]=0,0x303e[3]=1；auto：0x303e[7]=1,0x303e[3]=0-->
+        <ManualLExp>0x3e00,0x3e01,0x3e02</ManualLExp>
+        <!--0x3e00[3:0],0x3e01,0x3e02[7:4]-->
+        <ManualMExp>0x3e50,0x3e51,0x3e52</ManualMExp>
+        <!--0x3e50[3:0],0x3e51,0x3e52[7:4]-->
+        <ManualSExp>0x3e22,0x3e04,0x3e05</ManualSExp>
+        <!--0x3e22[3:0],0x3e04,0x3e05[7:4]-->
+        <AutoLExpMin>0x5e82,0x5e83</AutoLExpMin>
+        <AutoMExpMin>0x5e84,0x5e85</AutoMExpMin>
+        <AutoSExpMin>0x5e86,0x5e87</AutoSExpMin>
+        <AutoLExpMax>0x5e88,0x5e89</AutoLExpMax>
+        <AutoMExpMax>0x5e8a,0x5e8b</AutoMExpMax>
+        <AutoSExpMax>0x5e8c,0x5e8d</AutoSExpMax>
+        <AutoLExpMaxTop>0x320e,0x320f</AutoLExpMaxTop>
+        <AGainType>0x3e0d</AGainType>
+        <!--0x3e0d[2:0]=3'b111, 0x3e0d[0]:1-Long ana gain manual en, 0x3e0d[1]:1-Medium ana gain manual en, 0x3e0d[2]:1-Short ana gain manual en-->
+        <ManualLAGain>0x3e08,0x3e09</ManualLAGain>
+        <ManualMAGain>0x3e58,0x3e59</ManualMAGain>
+        <ManualSAGain>0x3e12,0x3e13</ManualSAGain>
+        <AutoLAGainMin>0x5e76,0x5e77</AutoLAGainMin>
+        <!--模拟增益最小值 寄存器-->
+        <AutoMAGainMin>0x5e78,0x5e79</AutoMAGainMin>
+        <AutoSAGainMin>0x5e7a,0x5e7b</AutoSAGainMin>
+        <AutoLAGainMaxFlag>0x7540</AutoLAGainMaxFlag>
+        <!--0x7540[2]-->
+        <AutoLAGainMax>0x5e7c,0x5e7d,0x711a</AutoLAGainMax>
+        <AutoLAGainMax1>0x711a</AutoLAGainMax1>
+        <!--0x711a << 4-->
+        <!--模拟增益最大值 寄存器-->
+        <AutoMAGainMax>0x5e7e,0x5e7f</AutoMAGainMax>
+        <AutoSAGainMax>0x5e80,0x5e81</AutoSAGainMax>
+        <DGainType>xxx</DGainType>
+        <!--手动/自动 数字增益模式，控制寄存器-->
+        <ManualLDGain>0x3e06,0x3e07</ManualLDGain>
+        <ManualMDGain>0x3e56,0x3e57</ManualMDGain>
+        <ManualSDGain>0x3e10,0x3e11</ManualSDGain>
+        <AutoLDGainMin>xxx</AutoLDGainMin>
+        <!--长曝光 数字增益最小值 寄存器-->
+        <AutoMDGainMin>xxx</AutoMDGainMin>
+        <!--中曝光 数字增益最小值 寄存器-->
+        <AutoSDGainMin>xxx</AutoSDGainMin>
+        <!--短曝光 数字增益最小值 寄存器-->
+        <AutoLDGainMax>xxx</AutoLDGainMax>
+        <!--maxLGain 0x5e7c[3:0],0x5e7d;  长曝光 数字增益最大值 寄存器-->
+        <AutoMDGainMax>xxx</AutoMDGainMax>
+        <!--maxMGain 0x5e7e[3:0],0x5e7f;  中曝光 数字增益最大值 寄存器-->
+        <AutoSDGainMax>xxx</AutoSDGainMax>
+        <!--maxSGain 0x5e80[3:0],0x5e81;  短曝光 数字增益最大值 寄存器-->
+        <HDROutputFormat>0x5e00,0x5006,0x5019</HDROutputFormat>
+        <!--combine:0x5e00[7]=0,0x5006[0]=1-->
+        <!--long_expo_output:0x5e00[7]=1,0x5006[0]=0,0x5019[1:0]=0-->
+        <!--medium_expo_output:0x5e00[7]=1,0x5006[0]=0,0x5019[1:0]=1-->
+        <!--short_expo_output:0x5e00[7]=1,0x5006[0]=0,0x5019[1:0]=2; 4种输出，控制寄存器-->
+        <AETarget1>0x5e62</AETarget1>
+        <AETarget2>0x5ee4</AETarget2>
+        <AETarget3>0x5ee5</AETarget3>
+        <AETarget4>0x5ee6</AETarget4>
+        <AETargetThre1>0x5ee8,0x5ee9</AETargetThre1>
+        <!--0x80 is 1x-->
+        <AETargetThre2>0x5eea,0x5eeb</AETargetThre2>
+        <!--0x80 is 1x-->
+        <AETargetThre3>0x5eec,0x5eed</AETargetThre3>
+        <!--0x80 is 1x-->
+        <AETargetThre4>0x5eee,0x5eef</AETargetThre4>
+        <!--0x80 is 1x-->
+        <AESpeedFM>0x5e66</AESpeedFM>
+        <!--long expo ae speed-->
+        <AESpeedSM>0x5e67</AESpeedSM>
+        <!--long expo ae speed-->
+        <AETolerance1>0x5e68</AETolerance1>
+        <!--long exp ae tolerance: unstable to stable-->
+        <AETolerance2>0x5e69</AETolerance2>
+        <!--long exp ae tolerance: stable to unstable-->
+        <Antiflicker>0x5e60</Antiflicker>
+        <!--0x5e60[0]=1: en-->
+        <ExpAntiflickerFreq>0x5e9b,0x5e9c</ExpAntiflickerFreq>
+        <!--0x5e9b[5:0], 0x5e9c,  0x5e9c[3:0] is decimal place; {0x3e00,0x3e01,0x3e02} should be integral multiple of {0x5e9b,0x5e9c}-->
+        <Pll2Sclk>0x3106</Pll2Sclk>
+        <Div0MUL>0x36f9,0x36e9</Div0MUL>
+        <DivPMULDiv2En>0x36fd,0x36ed</DivPMULDiv2En>
+        <DivPMUL>0x36fa,36ea</DivPMUL>
+        <DivSclk1>0x36fb,0x36eb</DivSclk1>
+        <DivRatio>0x320c,0x320d</DivRatio>
+        <Mean>0x6e30,0x6e60,0x6e90</Mean>
+        <ROIMirrorEnable>0x3221</ROIMirrorEnable>
+        <ROIRight>0x5e18,0x5e19,0x5e38,0x5e39,0x5e58,0x5e59</ROIRight>
+        <ROITop>0x5e1a,0x5e1b,0x5e3a,0x5e3b,0x5e5a,0x5e5b</ROITop>
+        <ROIWidth>0x6ec0,0x6ec1,0x6ec4,0x6ec5,0x6ec8,0x6ec9</ROIWidth>
+        <ROIHeight>0x6ec2,0x6ec3,0x6ec6,0x6ec7,0x6eca,0x6ecb</ROIHeight>
+        <ROIXShift>0x3210,0x3211</ROIXShift>
+        <ROIYShift>0x3212,0x3213</ROIYShift>
+        <!--122AT使用寄存器-->
+        <ExpTimeType_122>0x3e03</ExpTimeType_122>
+        <!--manual：0x3e03[1:0]=0x03, auto : 0x3e03[1:0]=0x00-->
+        <ManualLExp_122>0x3e00,0x3e01,0x3e02</ManualLExp_122>
+        <ManualMExp_122>0x3e00,0x3e01,0x3e02</ManualMExp_122>
+        <ManualSExp_122>0x3e00,0x3e01,0x3e02</ManualSExp_122>
+        <ManualLAGain_122>0x3e08,0x3e09</ManualLAGain_122>
+        <ManualMAGain_122>0x3e82,0x3e83</ManualMAGain_122>
+        <ManualSAGain_122>0x3e12,0x3e13</ManualSAGain_122>
+        <AETarget1_122>0x5e20</AETarget1_122>
+        <AETarget2_122>0x5e90</AETarget2_122>
+        <AETarget3_122>0x5e91</AETarget3_122>
+        <AETarget4_122>0x5e92</AETarget4_122>
+        <AETargetThre1_122>0x5e93,0x5e94</AETargetThre1_122>
+        <!--0x80 is 1x-->
+        <AETargetThre2_122>0x5e95,0x5e96</AETargetThre2_122>
+        <!--0x80 is 1x-->
+        <AETargetThre3_122>0x5e97,0x5e98</AETargetThre3_122>
+        <!--0x80 is 1x-->
+        <AETargetThre4_122>0x5e99,0x5e9a</AETargetThre4_122>
+        <!--0x80 is 1x-->
+        <AESpeedFM_122>0x5e26</AESpeedFM_122>
+        <!--long expo ae speed-->
+        <AESpeedSM_122>0x5e27</AESpeedSM_122>
+        <!--long expo ae speed-->
+        <AETolerance1_122>0x5e28</AETolerance1_122>
+        <!--long exp ae tolerance: unstable to stable-->
+        <AETolerance2_122>0x5e29</AETolerance2_122>
+        <Mean_122>0x6e0c</Mean_122>
+        <AutoLExpMin_122>0x5e34,0x5e35</AutoLExpMin_122>
+        <AutoMExpMin_122>0x5e34,0x5e35</AutoMExpMin_122>
+        <AutoSExpMin_122>0x5e34,0x5e35</AutoSExpMin_122>
+        <AutoLExpMax_122>0x5e36,0x5e37</AutoLExpMax_122>
+        <AutoMExpMax_122>0x5e36,0x5e37</AutoMExpMax_122>
+        <AutoSExpMax_122>0x5e36,0x5e37</AutoSExpMax_122>
+        <AutoLAGainMin_122>0x5e30,0x5e31</AutoLAGainMin_122>
+        <AutoMAGainMin_122>0x5e38,0x5e39</AutoMAGainMin_122>
+        <AutoSAGainMin_122>0x5e40,0x5e41</AutoSAGainMin_122>
+        <AutoLAGainMax_122>0x5e32,0x5e33</AutoLAGainMax_122>
+        <AutoMAGainMax_122>0x5e3a,0x5e3b</AutoMAGainMax_122>
+        <AutoSAGainMax_122>0x5e42,0x5e43</AutoSAGainMax_122>
+        <ROIRight_122>0x5e0a,0x5e0b</ROIRight_122>
+        <ROITop_122>0x5e0e,0x5e0f</ROITop_122>
+        <ROIWidth_122>0x5e06,0x5e07</ROIWidth_122>
+        <ROIHeight_122>0x5e08,0x5e09</ROIHeight_122>
+        <!--121AT使用寄存器-->
+        <ExpTimeType_121>0x3e03</ExpTimeType_121>
+        <!--manual：0x3e03[1:0]=0x03, auto : 0x3e03[1:0]=0x00-->
+        <Mean_121>0x6e3a</Mean_121>
+        <GainShift_121_122>0x5e01</GainShift_121_122>
+        <!-- 121AT: gain_shift = 1 << 0x5e01[4:3]; 122AT: gain_shift = 1 << 0x5e01[5:4];-->
+    </regAddrInfo_AE>
+    <regAddrInfo_AE_122>
+        <!--122AT使用寄存器-->
+        <Matrix>0x5e70~0x5e7f</Matrix>
+        <!-- 0x5e70-0x5e7f（每2个bit为一个数值）-->
+        <ROIMirrorEnable ReadOnly="1">0x3221</ROIMirrorEnable>
+        <ROILeft>0x5e80,0x5e81</ROILeft>
+        <ROITop>0x5e82,0x5e83</ROITop>
+        <ROIWidth>0x5e84,0x5e85</ROIWidth>
+        <ROIHeight>0x5e86,0x5e87</ROIHeight>
+        <ROIXShift>0x3210,0x3211</ROIXShift>
+        <ROIYShift>0x3212,0x3213</ROIYShift>
+    </regAddrInfo_AE_122>
+    <regAddrInfo_BLC>
+        <!--<BLCType>0x3902</BLCType> Manaul:0x3902[6]:0-->
+        <BLC_Type>0x5d2f</BLC_Type>
+        <!--0x57dc[5:0]=0x3f MCU 开关-->
+        <BLCManualB>0x3909,0x390a</BLCManualB>
+        <!--0x7ff-->
+        <BLCManualGb>0x390b,0x390c</BLCManualGb>
+        <!--0x7ff-->
+        <BLCManualGr>0x390d,0x390e</BLCManualGr>
+        <!--0x7ff-->
+        <BLCManualR>0x390f,0x3910</BLCManualR>
+        <!--0x7ff-->
+        <BLCAutoB>0xca00~0xca0b</BLCAutoB>
+        <!--MCU-->
+        <BLCAutoGb>0xca0c~0xca17</BLCAutoGb>
+        <BLCAutoGr>0xca18~0xca23</BLCAutoGr>
+        <BLCAutoR>0xca24~0xca2f</BLCAutoR>
+        <BLC_Value>0xc8c7,0xc8c8</BLC_Value>
+        <!--经过量化bit公式计算后的blc值，用于阈值判断-->
+        <Temperature_Thre>0xc103~0xc10e</Temperature_Thre>
+        <LAGain>0x3e08,0x3e09</LAGain>
+        <StandBy_LAGainThre>0xca30~0xca3b</StandBy_LAGainThre>
+    </regAddrInfo_BLC>
+    <regAddrInfo_LSC>
+        <Enable>0x5000</Enable>
+        <LSC>0x8de0~0x8ecf</LSC>
+        <StartGain>0x4900</StartGain>
+        <Ratio>0x4901</Ratio>
+        <LSC_Ratio>0x3e08,0x3e09</LSC_Ratio>
+		<LSC_qMin>0x5216</LSC_qMin>
+		<LSC_qMax>0x5217</LSC_qMax>
+		<LSC_gainMax>0x5215</LSC_gainMax>
+		<LSC_gainMin>0x5214</LSC_gainMin>
+		<MCU ReadOnly="1">0x4719</MCU>
+        <!--4719[6]--->
+    </regAddrInfo_LSC>
+	<regAddrInfo_LTMBLC>
+        <LTMBLC_Enable>0x5d9f</LTMBLC_Enable>
+		<!--0x5d9f[5]-->
+        <CurGain>0x3e08,0x3e09</CurGain>
+        <GainNode_1>0x7501</GainNode_1>
+        <GainNode_2>0x750c</GainNode_2>
+		<!--0x7501*16,0x750c*16-->
+		<Delta_Base>0x750d</Delta_Base>
+		<DR_Ratio>0x7508</DR_Ratio>
+		<Gain_Ratio>0x7509</Gain_Ratio>
+		<COMPS_Ratio>0x750a</COMPS_Ratio>
+		<Blt_Manual>0x7505,0x7506</Blt_Manual>
+		<CurBLC>0x5df5,0x5df6</CurBLC>
+    </regAddrInfo_LTMBLC>
+    <regAddrInfo_GAMMA>
+        <GammaA>0x5140~0x5181,0x6300~0x6341</GammaA>
+        <GammaB>0x5182~0x51c3,0x6342~0x6383</GammaB>
+        <GammaC>0xc2dd~0xc31e</GammaC>
+        <!--0xc2dd~0x31e Gamma, 0xc31f~0x360 Gamma Gain-->
+        <Inter_Enable>0x4756</Inter_Enable>
+        <!--插值使能开关[5]-->
+        <Gain_Long>0x3e08~0x3e09</Gain_Long>
+        <!--只读-->
+        <Luma_Long>0x6e30</Luma_Long>
+        <!--只读-->
+        <Gain_Thresold>0x5042,0x5044</Gain_Thresold>
+        <!--Gain Thresold1: 0x5042[7:0] << 4;Gain Thresold2: 0x5044[7:0] << 4-->
+        <Luma_Thresold>0x5046,0x5048</Luma_Thresold>
+        <!--luma Thresold1: 0x5046[7:0];luma Thresold2: 0x5048[7:0]-->
+        <Gamma_Out_Enable>0x4759</Gamma_Out_Enable>
+        <!--0x4759[4]:打开gamma输出使能;0x4759[5]:打开gamma_gain 输出使能-->
+        <GammaOut>0x5140~0x5181</GammaOut>
+        <!--0x5140~0x5181 Out Gamma, 0x6300~0x6341 Out Gamma Gain-->
+    </regAddrInfo_GAMMA>
+    <regAddrInfo_GAMMA_Gain>
+        <!--220AT Gamma-->
+        <GammaA>0x6300~0x6341</GammaA>
+        <GammaB>0x6342~0x6383</GammaB>
+        <!--0xc259~0xc29a Gamma, 0xc29b~0xc2dc Gamma Gain-->
+        <GammaC>0xc31f~0xc360</GammaC>
+        <!--0xc2dd~0x31e Gamma, 0xc31f~0x360 Gamma Gain-->
+        <Inter_Enable>0x4756</Inter_Enable>
+        <!--插值使能开关[5]-->
+        <Gain_Long>0x3e08~0x3e09</Gain_Long>
+        <!--只读-->
+        <Luma_Long>0x6e30</Luma_Long>
+        <!--只读-->
+        <Gain_Thresold>0x5042,0x5044</Gain_Thresold>
+        <!--Gain Thresold1: 0x5042[7:0] << 4;Gain Thresold2: 0x5044[7:0] << 4-->
+        <Luma_Thresold>0x5046,0x5048</Luma_Thresold>
+        <!--luma Thresold1: 0x5046[7:0];luma Thresold2: 0x5048[7:0]-->
+        <Gamma_Out_Enable>0x4759</Gamma_Out_Enable>
+        <!--0x4759[4]:打开gamma输出使能;0x4759[5]:打开gamma_gain 输出使能-->
+        <GammaOut>0x6300~0x6341</GammaOut>
+        <!--0x5140~0x5181 Out Gamma, 0x6300~0x6341 Out Gamma Gain-->
+    </regAddrInfo_GAMMA_Gain>
+    <regAddrInfo_GAMMA_MCU>
+        <GammaA ReadOnly="1">0xc1e2~0xc223</GammaA>
+        <GammaAEX>0x8340~0x8381</GammaAEX>
+        <GammaB ReadOnly="1">0xc2ea~0xc32b</GammaB>
+        <GammaBEX>0x83c4~0x8405</GammaBEX>
+        <GammaC ReadOnly="1">0xc36e~0xc3af</GammaC>
+        <GammaCEX>0x8448~0x8489</GammaCEX>
+        <!--0xc1e2~0xc3af Gamma-->
+        <Enable>0x4739,0x7532</Enable>
+        <!--0x4739[1],0x7532[0]-->
+        <Out_Enable>0x7532,0x57dc</Out_Enable>
+        <!--0x7532[3],0x57dc[4]-->
+        <GammaC_En>0x7532</GammaC_En>
+        <!--0x7532[4]-->
+        <DR_TH1 ReadOnly="1">0xc008</DR_TH1>
+        <DR_TH1EX>0x84cc</DR_TH1EX>
+        <!--DR_TH1-->
+        <DR_TH2 ReadOnly="1">0xc009</DR_TH2>
+        <DR_TH2EX>0x84cd</DR_TH2EX>
+        <!--DR_TH2-->
+        <DR_TH3 ReadOnly="1">0xc00a</DR_TH3>
+        <DR_TH3EX>0x84ce</DR_TH3EX>
+        <!--DR_TH3-->
+        <Cur_DR_TH>0x5d40,0x5d41</Cur_DR_TH>
+        <!--Cur_DR_TH-->
+        <GammaOut>0x5140~0x5181</GammaOut>
+        <!--0x5140~0x5181 Out Gamma-->
+    </regAddrInfo_GAMMA_MCU>
+    <regAddrInfo_GAMMA_Gain_MCU>
+        <GammaA ReadOnly="1">0xc224~0xc265</GammaA>
+        <GammaAEX>0x8382~0x83c3</GammaAEX>
+        <GammaB ReadOnly="1">0xc32c~0xc36d</GammaB>
+        <GammaBEX>0x8406~0x8447</GammaBEX>
+        <GammaC ReadOnly="1">0xc3b0~0xc3f1</GammaC>
+        <GammaCEX>0x848A~0x84cb</GammaCEX>
+        <!--0xc224~0xc3f1 GammaGain-->
+        <Enable>0x4739,0x7532</Enable>
+        <!--0x4739[1],0x7532[0]-->
+        <Out_Enable>0x7532,0x57dc</Out_Enable>
+        <!--0x7532[3],0x57dc[5]-->
+        <GammaC_En>0x7532</GammaC_En>
+        <!--0x7532[4]-->
+        <DR_TH1 ReadOnly="1">0xc008</DR_TH1>
+        <DR_TH1EX>0x84cc</DR_TH1EX>
+        <!--DR_TH1-->
+        <DR_TH2 ReadOnly="1">0xc009</DR_TH2>
+        <DR_TH2EX>0x84cd</DR_TH2EX>
+        <!--DR_TH2-->
+        <DR_TH3 ReadOnly="1">0xc00a</DR_TH3>
+        <DR_TH3EX>0x84ce</DR_TH3EX>
+        <!--DR_TH3-->
+        <Cur_DR_TH>0x5d40,0x5d41</Cur_DR_TH>
+        <!--Cur_DR_TH-->
+        <GammaOut>0x6300~0x6341</GammaOut>
+        <!--0x6300~0x6341 Out GammaGain-->
+    </regAddrInfo_GAMMA_Gain_MCU>
+    <regAddrInfo_WB>
+        <WB_BGain>0x5ac8</WB_BGain>
+        <WB_RGain>0x5ac9</WB_RGain>
+        <WB_GGain>0x5aca</WB_GGain>
+        <WB_BBase>0x5abc</WB_BBase>
+        <WB_BMin>0x5ab2</WB_BMin>
+        <WB_BMax>0x5ab3</WB_BMax>
+        <WB_RBase>0x5abd</WB_RBase>
+        <WB_RMin>0x5ab4</WB_RMin>
+        <WB_RMax>0x5ab5</WB_RMax>
+        <WB_BValue>0x5aaf,0x5aae</WB_BValue>
+        <WB_RValue>0x5aaf,0x5aac</WB_RValue>
+        <WB_GValue>0x5aaf,0x5aad</WB_GValue>
+        <WB_Ratio>0x5aec~0x5aee</WB_Ratio>
+        <!--Read Only 0x5aec[3:0]HT,0x5aed[3:0]MT,0x5aee[3:0]LT-->
+        <WB_SingleTest>0x5ac7</WB_SingleTest>
+        <!--0x5ac7[7:4]，BG=0x06, RG=0x05,RBG=0x03-->
+        <CalibrationEnable>0x5ab0,0x5ac0</CalibrationEnable>
+        <!--0x5ab0[0]=0x01,0x5ac0[3:2]=0x01,0x5ab2=0x01,0x5ab3=0xff,0x5ab4=0x01,0x5ab5=0xff-->
+        <ManualWBEnable>0x5ab0,0x5ac0</ManualWBEnable>
+        <!--0x5ab0[0]=0x00,0x5ac0[3:2]=0x01,0x5ac8=Blue_Base,0x5ac9=Red_Base,0x5aca=0x40-->
+        <!-- high color temperature: D65, D50; medium color temperature: TL84, CWF; low color temperature: U30, A, HZ-->
+        <AutoWBEnable>0x5ab0,0x5ac0,0x500c</AutoWBEnable>
+        <!--0x5ab0[0]=0x00,0x5ac0[3:2]=0x02-->
+        <!--0x500c[4]=0x01:mark white pixel-->
+        <!--0x5ac0[1:0]=0x00:white pixel HMT,=0x01:white pixel HT,=0x02:white pixel MT,=0x03:white pixel LT-->
+        <!--0x5ac0[6]=0x01:color bias strength-->
+        <AutoWB_H>0x5ad0~0x5ad5</AutoWB_H>
+        <AutoWB_M>0x5ad6~0x5adb</AutoWB_M>
+        <AutoWB_L>0x5adc~0x5adf,0x5ace,0x5acf</AutoWB_L>
+        <!--0x5abc=Blue_Base,0x5abd=Reg_Base,0x5ab2=Blue_Min,0x5ab3=Blue_Max,0x5ab4=Red_Min,0x5ab5=Red_Max-->
+        <!--0x5ad0=HBG_Calc_l,0x5ad1=HBG_Calc_h,0x5ad2=HRG_Calc_l,0x5ad3=HRG_Calc_h,0x5ad4=HRBG_Calc_l,0x5ad5=HRBG_Calc_h-->
+        <!--0x5ad6=MBG_Calc_l,0x5ad7=MBG_Calc_h,0x5ad8=MRG_Calc_l,0x5ad9=MRG_Calc_h,0x5ada=MRBG_Calc_l,0x5adb=MRBG_Calc_h-->
+        <!--0x5adc=LBG_Calc_l,0x5add=LBG_Calc_h,0x5ade=LRG_Calc_l,0x5adf=LRG_Calc_h,0x5ace=LRBG_Calc_l,0x5acf=LRBG_Calc_h-->
+        <H_TempB>0x5ae3</H_TempB>
+        <!--high color temperature blue: 0x5ae3[3:0]-->
+        <H_TempR>0x5ae3</H_TempR>
+        <!--high color temperature red: 0x5ae3[7:4]-->
+        <M_TempB>0x5ae4</M_TempB>
+        <!--medium color temperature blue: 0x5ae4[3:0]-->
+        <M_TempR>0x5ae4</M_TempR>
+        <!--medium color temperature red: 0x5ae4[7:4]-->
+        <L_TempB>0x5ae5</L_TempB>
+        <!--low color temperature blue: 0x5ae5[3:0]-->
+        <L_TempR>0x5ae5</L_TempR>
+        <!--low color temperature red: 0x5ae5[7:4]-->
+        <L_Temp_L_LightB>0x5ae8</L_Temp_L_LightB>
+        <!--low color temperature & low light: 0x5ae8[3:0]-->
+        <L_Temp_L_LightR>0x5ae8</L_Temp_L_LightR>
+        <!--low color temperature & low light: 0x5ae8[7:4]-->
+        <LimitGainEnable>0x5ab0</LimitGainEnable>
+        <!--0x5ab0[7]=1:en low color temperature & low light-->
+        <B_Gain_Max>0x5ab7</B_Gain_Max>
+        <!--max b gain-->
+        <B_Gain_Min>0x5ab6</B_Gain_Min>
+        <!--min b gain-->
+        <R_Gain_Max>0x5ab9</R_Gain_Max>
+        <!--max r gain-->
+        <R_Gain_Min>0x5ab8</R_Gain_Min>
+        <!--min r gain-->
+        <L_Light_Temp>0x5aef</L_Light_Temp>
+        <!--Read Only 0x5aef[0]=0x01:Low Light,0x5aef[1]=0x01:Low Temp-->
+        <ROIMirrorEnable>0x3221</ROIMirrorEnable>
+        <!--0x3221为0x06或0x66时，认为对图像进行了mirror,roi left right寄存器交换-->
+        <ROI_Left>0x5aaa</ROI_Left>
+        <!--left pos =  {0x5aa8} * 8-->
+        <ROI_Right>0x5aab</ROI_Right>
+        <!--right pos =  {0x5aa9} * 8-->
+        <ROI_Top>0x5aa8</ROI_Top>
+        <!--Top pos =  {0x5aaa} * 4-->
+        <ROI_Bottom>0x5aa9</ROI_Bottom>
+        <!--Bottom pos =  {0x5aab} * 4-->
+    </regAddrInfo_WB>
+    <regAddrInfo_Saturation>
+        <Saturation_Type>0x57dc</Saturation_Type>
+        <!--0x57dc[2]=1 MCU Saturation开关-->
+        <Manual_Saturation>0x5107</Manual_Saturation>
+        <Auto_Saturation>0xc05f~0xc065</Auto_Saturation>
+        <!--MCU-->
+        <LMean>0x6e30</LMean>
+        <LInttime>0x3e00~0x3e02</LInttime>
+        <LAGain>0x3e08,0x3e09</LAGain>
+        <Bit_Value>0xc8a4~0xc8a7</Bit_Value>
+        <Brightness_Thre>0xc8a8~0xc8ad</Brightness_Thre>
+        <BLC_Value>0xc8c7,0xc8c8</BLC_Value>
+        <!--经过量化bit公式计算后的blc值，用于阈值判断-->
+        <Temperature_Thre>0xc103~0xc10e</Temperature_Thre>
+        <Gain_Enable>0x5100</Gain_Enable>
+        <!--增益开关0x5100[5]-->
+        <Current_Gain>0x3e08~0x3e09</Current_Gain>
+        <!--当前实时增益-->
+        <Start_Gain>0x51de</Start_Gain>
+        <!--起始增益0x51de[7:0]-->
+        <End_Gain>0x51dc~0x51de</End_Gain>
+        <!--终止增益0x51dc[3:0],0x51dd[7:0]  [11:0]-->
+        <Delta>0x51df</Delta>
+        <!--delta 0x51df[6:0]-->
+    </regAddrInfo_Saturation>
+    <regAddrInfo_Saturation_122>
+        <Manual_Saturation>0x5107</Manual_Saturation>
+        <Gain_Enable>0x5100</Gain_Enable>
+        <!--增益开关0x5100[5]-->
+        <Current_Gain ReadOnly="1">0x3e08~0x3e09</Current_Gain>
+        <!--当前实时增益-->
+        <Start_Gain>0x51de</Start_Gain>
+        <!--起始增益0x51de[7:0]-->
+        <End_Gain>0x51dc~0x51de</End_Gain>
+        <!--终止增益0x51dc[3:0],0x51dd[7:0]  [11:0]-->
+        <Delta>0x51df</Delta>
+        <!--delta 0x51df[6:0]-->
+        <Normal_Processed_Enable>0x500c</Normal_Processed_Enable>
+        <!-- 整体饱和度调整开关 500c[0]为1 开 -->
+        <Normal_Processed_Type>0x5280</Normal_Processed_Type>
+        <!-- 整体饱和度调整模式 1为自动增益模式，0为手动模式 -->
+        <Normal_Processed_Manual>0x5288</Normal_Processed_Manual>
+        <!-- 整体饱和度调整 手动模式 -->
+        <Normal_Processed_Auto>0x5288~0x528f</Normal_Processed_Auto>
+        <!-- 整体饱和度调整 自动模式 -->
+        <Normal_Processed_Current ReadOnly="1">0x5284</Normal_Processed_Current>
+        <!-- 整体饱和度调整 自动模式 当前饱和度 ReadOnly -->
+        <Normal_Gain_Current ReadOnly="1">0x60a0</Normal_Gain_Current>
+        <!-- 整体饱和度调整  当前长曝光增益-->
+        <Blue_Pixel_Enable>0x5ae7</Blue_Pixel_Enable>
+        <!-- 蓝色像素点饱和度调整开关 0x5ad0[2],置1，开 -->
+        <Blue_Pixel_Base_Min>0x5a93</Blue_Pixel_Base_Min>
+        <!-- 蓝色基准饱和度的最小值 0x5a93[7:4]*8 -->
+        <Blue_Pixel_Base_Current ReadOnly="1">0x5aa6</Blue_Pixel_Base_Current>
+        <!-- 当前场景蓝色基准饱和度 ReadOnly -->
+        <Blue_Pixel_Gain_Thre>0x5a93</Blue_Pixel_Gain_Thre>
+        <!-- 蓝色像素点增益起点阈值 0x5a93[3:0]*8 -->
+        <Blue_Pixel_Gain_Current ReadOnly="1">0x60a0</Blue_Pixel_Gain_Current>
+        <!-- 蓝色像素点当前长曝光增益 -->
+        <Blue_Pixel_Scene_Thre>0x5a95</Blue_Pixel_Scene_Thre>
+        <!-- 蓝色像素点场景判断阈值 -->
+        <Blue_Pixel_Lower_Speed>0x5a94</Blue_Pixel_Lower_Speed>
+        <!-- 蓝色像素点降低饱和度的快慢 [7:4]随色温增 [3:0]随增益降低 -->
+        <Blue_Pixel_Color_Temp_Eigen ReadOnly="1">0x5aa0</Blue_Pixel_Color_Temp_Eigen>
+        <!-- 蓝色像素点色温特征值 ReadOnly -->
+        <Blue_Pixel_Processed_Enable>0x500c</Blue_Pixel_Processed_Enable>
+        <!-- 蓝色像素点饱和度 整体饱和度调整开关 500c[0]为1 开 -->
+        <Blue_Pixel_Processed_Manual>0x52a3</Blue_Pixel_Processed_Manual>
+        <!-- 蓝色像素点饱和度 [7],置1，手动模式，[6:0]为手动设置值，否则为自动模式 -->
+        <Blue_Pixel_Processed_Blue_Component>0x52a0</Blue_Pixel_Processed_Blue_Component>
+        <!-- 蓝色点判断的蓝色分量附加判断 -->
+        <Blue_Pixel_Processed_Red_Component>0x52a1</Blue_Pixel_Processed_Red_Component>
+        <!-- 蓝色点判断的红色分量附加判断 -->
+        <Blue_Pixel_Processed_Speed>0x52a2</Blue_Pixel_Processed_Speed>
+        <!-- 0x52a2[3:0]蓝色点判断，蓝色分量符合要求的快慢，0x52a2[7:4]蓝色点判断，红色分量符合要求的快慢 -->
+        <Red_Scene_Processed_Enable>0x500c</Red_Scene_Processed_Enable>
+        <!-- 红色场景 整体饱和度调整开关 500c[0]为1 开 -->
+        <Red_Scene_Processed_Lower>0x5280</Red_Scene_Processed_Lower>
+        <!-- 红色场景降饱和度 0x5280[4]为1为打开红色场景降饱和度，0为关闭 -->
+        <Red_Scene_Enable>0x5ae7</Red_Scene_Enable>
+        <!-- 0x5ae7[0],置1，开启红色场景饱和度调整的计算 -->
+        <Red_Scene_Base_Min>0x5a90</Red_Scene_Base_Min>
+        <!-- 红色基准饱和度的最小值 0x5a90[7:4]*8 -->
+        <Red_Scene_Base_Current ReadOnly="1">0x5aa5</Red_Scene_Base_Current>
+        <!-- 当前场景红色场景饱和度 ReadOnly -->
+        <Red_Scene_Gain_Thre>0x5a90</Red_Scene_Gain_Thre>
+        <!-- 红色场景增益起点阈值 0x5a90[3:0]*8 -->
+        <Red_Scene_Gain_Current ReadOnly="1">0x60a0</Red_Scene_Gain_Current>
+        <!-- 红色场景当前长曝光增益 -->
+        <Red_Scene_Scene_Thre>0x5a92</Red_Scene_Scene_Thre>
+        <!-- 红色场景场景判断阈值 -->
+        <Red_Scene_Eigen ReadOnly="1">0x5aa1</Red_Scene_Eigen>
+        <!-- 红色场景特征值ReadOnly -->
+        <Red_Scene_Lower_Speed>0x5a91</Red_Scene_Lower_Speed>
+        <!-- 红色场景降低饱和度的快慢 0x5a91[3:0]随增益增加时下降快慢 [7:4]随红色场景变红的下降快慢 -->
+        <Bright_Adaptive_Enable>0x52ad</Bright_Adaptive_Enable>
+        <!-- 0x52ad[7]写1，打开局部亮度自适应调整饱和度功能 -->
+        <Bright_Adaptive_Bright_Thre>0x52af</Bright_Adaptive_Bright_Thre>
+        <!-- 0x52af[5:0]*4,设置亮度阈值 -->
+        <Bright_Adaptive_Bright_Speed>0x52af</Bright_Adaptive_Bright_Speed>
+        <!-- 0x52af[7:6]控制饱和度随亮度减小而减小的快慢 -->
+        <Bright_Adaptive_Bright_Max>0x52ad</Bright_Adaptive_Bright_Max>
+        <!-- 0x52ad[3:0]*8，饱和度随亮度减小而减小的最大值 -->
+        <Bright_Adaptive_Gain_Thre>0x52b8</Bright_Adaptive_Gain_Thre>
+        <!-- 0x52b8[5:0]*4,设置场景阈值，当增益大于这个阈值时，暗处降饱和度功能开启 -->
+        <Bright_Adaptive_Gain_Speed>0x52b8</Bright_Adaptive_Gain_Speed>
+        <!-- 0x52b8[7:6]控制暗处降饱和度功能随增益增大而开启的快慢 -->
+        <Blue_Shadow_Enable>0x5280</Blue_Shadow_Enable>
+        <!-- 0x5280[2] -->
+        <Blue_Exp_Time_Thr>0x608f</Blue_Exp_Time_Thr>
+        <!-- 0x608f[5:0] -->
+        <Blue_Exp_Speed>0x608f</Blue_Exp_Speed>
+        <!-- 0x608f[7:6] -->
+        <Blue_Exp_Min>0x60be</Blue_Exp_Min>
+        <!-- 0x60be[7:4] -->
+        <Blue_Exp_CurBase>0x60aa</Blue_Exp_CurBase>
+        <!-- 0x60be[7:0] -->
+        <Blue_Exp_Time>0x3e00,0x3e01,0x3e02</Blue_Exp_Time>
+        <!--0x3e00[3:0],0x3e01,0x3e02[7:4]-->
+        <Blue_Brightness_Thr>0x5282</Blue_Brightness_Thr>
+        <!-- 0x5282[5:0] -->
+        <Blue_Brightness_Speed>0x5282</Blue_Brightness_Speed>
+        <!-- 0x5282[7:6] -->
+    </regAddrInfo_Saturation_122>
+    <regAddrInfo_Sharpness>
+        <Gain>0x60a0,0x61a0</Gain>
+        <!--Read Only-->
+        <Sharpness_Enable>0x60e0,0x61e0</Sharpness_Enable>
+        <!--Enable:0x6xe0[1]=1-->
+        <Sharpness_Type>0x60e6,0x61e6</Sharpness_Type>
+        <!--Manual:0x6xe6[5]=1,Auto:0x6xe6[5]=0 -->
+        <ManualStrengthN>0x60d5,0x61d5</ManualStrengthN>
+        <!--Negative edge enhancement:0x6xd5[3:0]-->
+        <ManualStrengthP>0x60d5,0x61d5</ManualStrengthP>
+        <!--Positive edge enhancement:0x6xd5[7:4]-->
+        <AutoStrengthN_Gain1x>0x60d5,0x61d5</AutoStrengthN_Gain1x>
+        <AutoStrengthN_Gain2x>0x60d6,0x61d6</AutoStrengthN_Gain2x>
+        <AutoStrengthN_Gain4x>0x60d7,0x61d7</AutoStrengthN_Gain4x>
+        <AutoStrengthN_Gain8x>0x60d8,0x61d8</AutoStrengthN_Gain8x>
+        <AutoStrengthN_Gain16x>0x60d9,0x61d9</AutoStrengthN_Gain16x>
+        <AutoStrengthN_Gain32x>0x60da,0x61da</AutoStrengthN_Gain32x>
+        <AutoStrengthN_Gain64x>0x60db,0x61db</AutoStrengthN_Gain64x>
+        <AutoStrengthP_Gain1x>0x60d5,0x61d5</AutoStrengthP_Gain1x>
+        <AutoStrengthP_Gain2x>0x60d6,0x61d6</AutoStrengthP_Gain2x>
+        <AutoStrengthP_Gain4x>0x60d7,0x61d7</AutoStrengthP_Gain4x>
+        <AutoStrengthP_Gain8x>0x60d8,0x61d8</AutoStrengthP_Gain8x>
+        <AutoStrengthP_Gain16x>0x60d9,0x61d9</AutoStrengthP_Gain16x>
+        <AutoStrengthP_Gain32x>0x60da,0x61da</AutoStrengthP_Gain32x>
+        <AutoStrengthP_Gain64x>0x60db,0x61db</AutoStrengthP_Gain64x>
+        <Ratio_Max_StrengthN>0x60dc,0x61dc</Ratio_Max_StrengthN>
+        <Ratio_Max_StrengthP>0x60dc,0x61dc</Ratio_Max_StrengthP>
+        <Absolute_Max_StrengthN>0x60e2,0x61e2</Absolute_Max_StrengthN>
+        <Absolute_Max_StrengthP>0x60e2,0x61e2</Absolute_Max_StrengthP>
+        <Strength_Current>0x60a5,0x61a5</Strength_Current>
+        <!--122AT使用寄存器-->
+        <Short_Enable>0x62e0</Short_Enable>
+        <!-- 0x62e0[1]值1，打开边缘增强功能 -->
+        <Short_Edge_Positive_Base>0x62e6</Short_Edge_Positive_Base>
+        <!-- 0x62e6[7:4]设置正边缘的边缘增强系数的base值 -->
+        <Short_Edge_Negative_Base>0x62e6</Short_Edge_Negative_Base>
+        <!-- 0x62e6[3:0]设置负边缘的边缘增强系数的base值 -->
+        <Short_Edge_Gain_Thre>0x62ea</Short_Edge_Gain_Thre>
+        <!-- 0x62ea[3:0]*8设置增益阈值 -->
+        <Short_Edge_Speed>0x62e7</Short_Edge_Speed>
+        <!-- 0x62e7[3:0]设置边缘增强系数随增益增大而减小的快慢 -->
+        <Short_Edge_Max>0x62e7</Short_Edge_Max>
+        <!-- 0x62e7[7:4]设置边缘增强系数随增益增大而减小的最大值 -->
+        <Short_Noise_Base>0x62e5</Short_Noise_Base>
+        <!-- 0x62e5[3:0](8bit)设置基础噪声特征值 -->
+        <Short_Noise_Gain_Thre>0x62e4</Short_Noise_Gain_Thre>
+        <!-- 0x62e4[3:0]*8设置增益阈值 -->
+        <Short_Noise_Gain_Speed>0x62e4</Short_Noise_Gain_Speed>
+        <!-- 0x62e4[7:4]设置噪声特征值随增益变化而变化的快慢 -->
+        <Short_Noise_Bright_Thre>0x62e3</Short_Noise_Bright_Thre>
+        <!-- 0x62e3[3:0]*8(8bit)设置亮度阈值 -->
+        <Short_Noise_Bright_Speed>0x62e3</Short_Noise_Bright_Speed>
+        <!-- 0x62e3[7:4]设置噪声特征值随亮度变化而变化的快慢 -->
+        <Short_Noise_Max>0x62e5</Short_Noise_Max>
+        <!-- 0x62e5[7:4]/2(8bit)设置噪声特征值最大值 -->
+        <Short_Limit_Enable>0x62e2</Short_Limit_Enable>
+        <!-- 0x62e2[0]置0，打开边缘增强值限制 -->
+        <Short_Limit_Bright_Edge_Max>0x62e8</Short_Limit_Bright_Edge_Max>
+        <!-- 0x62e8[7:4]控制亮边缘增强的最大值 -->
+        <Short_Limit_Dark_Edge_Max>0x62e8</Short_Limit_Dark_Edge_Max>
+        <!-- 0x62e8[3:0]控制暗边缘增强的最大值 -->
+        <Short_Limit_Max>0x62e9</Short_Limit_Max>
+        <!-- 0x62e9控制边缘增强值的最大值 -->
+    </regAddrInfo_Sharpness>
+    <regAddrInfo_GB>
+        <Enable>0x60ee,0x61ee</Enable>
+        <!--enable 0x6xee[3]=1-->
+        <Has_Max_Strength>0x60ee,0x61ee</Has_Max_Strength>
+        <!--0x6xee[2]=1-->
+        <Max_Strength>0x60ee,0x61ee</Max_Strength>
+        <!--0x6xee[7:4]-->
+        <Flat_Region_Thre>0x60ee,0x61ee</Flat_Region_Thre>
+        <!--0x6xee[1:0]-->
+        <Flat_Region_Thre_Min>0x60ef,0x61ef</Flat_Region_Thre_Min>
+        <!--0x6xef[3:0]*4-->
+        <Flat_Region_Thre_Max>0x60ef,0x61ef</Flat_Region_Thre_Max>
+        <!--0x6xef[7:4]*16-->
+    </regAddrInfo_GB>
+    <regAddrInfo_CAC>
+        <Enable>0x60bb,0x61bb</Enable>
+        <!--enable 0x6xbb[7]=1-->
+        <Base_Type>0x60bb,0x61bb</Base_Type>
+        <!--brightness : 0x6xbb[4]=0，Green :0x6xbb[4]=1-->
+        <Thre>0x60bc,0x61bc</Thre>
+        <!--0x6xbc[7:0]-->
+        <Strength>0x60bb,0x61bb</Strength>
+        <!--0x6xbb[2:0]-->
+    </regAddrInfo_CAC>
+    <regAddrInfo_CAC_122>
+        <Enable>0x6080,0x6180,0x6280</Enable>
+        <!--L/M/S Enable 0x6x80[7]=1-->
+        <Edge_Width>0x6081,0x6181</Edge_Width>
+        <!--L/M 校正边缘宽度: 0x6x81[7:4]-->
+        <Area_Judge_Brightnes_Cal_Area>0x6083,0x6183</Area_Judge_Brightnes_Cal_Area>
+        <!--L/M This region is considered to be the region that CAC needs to correct: 0x6x83-->
+        <Area_Judge_Brightnes_ISGreater_Thre>0x6080,0x6180</Area_Judge_Brightnes_ISGreater_Thre>
+        <!--L/M Set to 0, 2*3 area is greater than the brightness threshold, CAC brightness are considered OK: 0x6x80[5]-->
+        <Area_Judge_Brightnes_Large_ISBright>0x6180,0x6280</Area_Judge_Brightnes_Large_ISBright>
+        <!--M/S consider whether the large area corresponding to the long exposure point is a bright area: 0x6x80[0] (Except for long exposure) -->
+        <Area_Judge_Gain_Thre>0x6089,0x6089,0x6089</Area_Judge_Gain_Thre>
+        <!--L/M/S Gain threshold: 0x6089[6:0]-->
+        <Area_Judge_Gain_Speed>0x608b,0x608b,0x608b</Area_Judge_Gain_Speed>
+        <!--L/M/S Calibrate intensity gradually decreases with increasing gain: 0x608b[7:4]-->
+        <Area_Judge_Col_Blue>0x6087,0x6187,0x6287</Area_Judge_Col_Blue>
+        <!--L/M/S Calibrate intensity gradually decreases with increasing gain: 0x6x87-->
+        <Area_Judge_Col_Red>0x6088,0x6188,0x6288</Area_Judge_Col_Red>
+        <!--L/M/S Calibrate intensity gradually decreases with increasing gain: 0x6x88-->
+        <Area_Judge_Col_Blue_Speed>0x6082,0x6182,0x6282</Area_Judge_Col_Blue_Speed>
+        <!--L/M/S Calibrate intensity gradually decreases with increasing gain: 0x6x82[3:0]-->
+        <Area_Judge_Col_Red_Speed>0x6082,0x6182,0x6282</Area_Judge_Col_Red_Speed>
+        <!--L/M/S Calibrate intensity gradually decreases with increasing gain: 0x6x82[7:4]-->
+        <Area_Judge_Edge_Vale_ISNecess>0x6080,0x6180,0x6280</Area_Judge_Edge_Vale_ISNecess>
+        <!--L/M/S Set it to 1 make the edge value a necessary condition: 0x6x80[3]-->
+        <Area_Judge_Edge_ISCommon>0x6080,0x6180</Area_Judge_Edge_ISCommon>
+        <!--L/M Set it to 0 choose common edge,Set it to 1 choose blue edge: 0x6x80[6]-->
+        <Area_Judge_Edge_Second_Thre>0x608a,0x618a</Area_Judge_Edge_Second_Thre>
+        <!--L/M Brightness threshold: 0x6x8a-->
+        <Area_Judge_Edge_Second_Speed>0x608b,0x618b</Area_Judge_Edge_Second_Speed>
+        <!--L/M Brightness Speed: 0x6x8b[3:0]-->
+        <Area_Judge_Edge_Value_Thre>0x6085,0x6185,0x6285</Area_Judge_Edge_Value_Thre>
+        <!--L/M/S Set the threshold of an edge value: 0x6x85-->
+        <Area_Judge_Edge_Value_Speed>0x6086,0x6186,0x6286</Area_Judge_Edge_Value_Speed>
+        <!--L/M/S Set the threshold of an edge value: 0x6x86[7:4]-->
+        <Area_Judge_Edge_Blue_ISNecess>0x6080,0x6180,0x6280</Area_Judge_Edge_Blue_ISNecess>
+        <!--L/M/S Set the threshold of an edge value: 0x6x80[2]-->
+        <Area_Judge_Edge_Blue_Brightness_Thre>0x6084,0x6184,0x6284</Area_Judge_Edge_Blue_Brightness_Thre>
+        <!--L/M/S Set the brightness threshold of the bright color: 0x6x84-->
+        <Area_Judge_Edge_Blue_Brightness_Speed>0x6086,0x6186,0x6286</Area_Judge_Edge_Blue_Brightness_Speed>
+        <!--L/M/S Set the brightness threshold of the bright color: 0x6x86[3:0]-->
+        <Strength>0x6081,0x6181,0x6281</Strength>
+        <!--L/M/S Set CAC correction base strength: 0x6x81[3:0]-->
+        <Strength_Lower_Thre>0x608d,0x608d,0x608d</Strength_Lower_Thre>
+        <!--L/M/S 设置积分时间的阈值 0x608d[5:0]*64-->
+        <Strength_Lower_Speed>0x608d,0x608d,0x608d</Strength_Lower_Speed>
+        <!--L/M/S 设置CAC强度随积分时间减小而减小的快慢 0x608d[7:6]-->
+        <Strength_Lower_Max>0x608c,0x608c,0x608c</Strength_Lower_Max>
+        <!--L/M/S 设置CAC强度随积分时间减小而减小的最大值 0x608c[7:4]-->
+    </regAddrInfo_CAC_122>
+    <regAddrInfo_NR>
+        <Enable>0x60e0,0x61e0</Enable>
+        <!--Enable: 0x6xe0[0]=1-->
+        <Gain>0x60a0,0x61a0</Gain>
+        <!--Read Only-->
+        <NRType>0x60e6,0x61e6</NRType>
+        <!--Lpf1~Lpf3 Manual: 0x6xe6[4]=1,Lpf1~Lpf3 Auto: 0x6xe6[4]=0-->
+        <LPF1_Manual_Strength>0x60c1,0x60c0,0x61c1,0x61c0</LPF1_Manual_Strength>
+        <!--lpf1 Manual Strength:{0x6xc1[1:0], 0x6xc0[7:0]}-->
+        <LPF1_Auto_Strength_Gain1x>0x60c0,0x61c0</LPF1_Auto_Strength_Gain1x>
+        <LPF1_Auto_Strength_Gain2x>0x60c1,0x61c1</LPF1_Auto_Strength_Gain2x>
+        <LPF1_Auto_Strength_Gain4x>0x60c2,0x61c2</LPF1_Auto_Strength_Gain4x>
+        <LPF1_Auto_Strength_Gain8x>0x60c3,0x61c3</LPF1_Auto_Strength_Gain8x>
+        <LPF1_Auto_Strength_Gain16x>0x60c4,0x61c4</LPF1_Auto_Strength_Gain16x>
+        <LPF1_Auto_Strength_Gain32x>0x60c5,0c61c5</LPF1_Auto_Strength_Gain32x>
+        <LPF1_Auto_Strength_Gain64x>0x60c6,0c61c6</LPF1_Auto_Strength_Gain64x>
+        <LPF2_Manual_Strength>0x60c8,0x60c7,0x61c8,0x61c7</LPF2_Manual_Strength>
+        <!--lpf2 Manual Strength:{0x6xc8[1:0], 0x6xc7[7:0]}-->
+        <LPF2_Auto_Strength_Gain1x>0x60c7,0x61c7</LPF2_Auto_Strength_Gain1x>
+        <LPF2_Auto_Strength_Gain2x>0x60c8,0x61c8</LPF2_Auto_Strength_Gain2x>
+        <LPF2_Auto_Strength_Gain4x>0x60c9,0x61c9</LPF2_Auto_Strength_Gain4x>
+        <LPF2_Auto_Strength_Gain8x>0x60ca,0x61ca</LPF2_Auto_Strength_Gain8x>
+        <LPF2_Auto_Strength_Gain16x>0x60cb,0x61cb</LPF2_Auto_Strength_Gain16x>
+        <LPF2_Auto_Strength_Gain32x>0x60cc,0c61cc</LPF2_Auto_Strength_Gain32x>
+        <LPF2_Auto_Strength_Gain64x>0x60cd,0c61cd</LPF2_Auto_Strength_Gain64x>
+        <LPF3_Manual_Strength>0x60cf,0x60ce,0x61cf,0x61ce</LPF3_Manual_Strength>
+        <!--lpf2 Manual Strength:{0x6xc8[1:0], 0x6xc7[7:0]}-->
+        <LPF3_Auto_Strength_Gain1x>0x60ce,0x61ce</LPF3_Auto_Strength_Gain1x>
+        <LPF3_Auto_Strength_Gain2x>0x60cf,0x61cf</LPF3_Auto_Strength_Gain2x>
+        <LPF3_Auto_Strength_Gain4x>0x60d0,0x61d0</LPF3_Auto_Strength_Gain4x>
+        <LPF3_Auto_Strength_Gain8x>0x60d1,0x61d1</LPF3_Auto_Strength_Gain8x>
+        <LPF3_Auto_Strength_Gain16x>0x60d2,0x61d2</LPF3_Auto_Strength_Gain16x>
+        <LPF3_Auto_Strength_Gain32x>0x60d3,0c61d3</LPF3_Auto_Strength_Gain32x>
+        <LPF3_Auto_Strength_Gain64x>0x60d4,0c61d4</LPF3_Auto_Strength_Gain64x>
+        <DetailType>0x60e6,0x61e6</DetailType>
+        <!-- Manual: 0x6xe6[6]=0-->
+        <LPF1_DetailType_Manual_Strength>0x60b8,0x61b8</LPF1_DetailType_Manual_Strength>
+        <LPF2_DetailType_Manual_Strength>0x60b9,0x61b9</LPF2_DetailType_Manual_Strength>
+        <LPF3_DetailType_Manual_Strength>0x60ba,0x61ba</LPF3_DetailType_Manual_Strength>
+        <LPF4_type>0x60ea,0x61ea</LPF4_type>
+        <!--always on: 0x6xea[5]=1 ,auto on: 0x6xeb[5]=0-->
+        <LPF4_Enable>0x60ea,0x61ea,0x60eb,0x61eb</LPF4_Enable>
+        <!--close:0x6xea[7:6]=0，0x6xeb[7:6]=0-->
+        <LPF4_Gain_Thre1>0x60ea,0x61ea</LPF4_Gain_Thre1>
+        <!--0x6xea[4:0]-->
+        <LPF4_Gain_Slop1>0x60ea,0x61ea</LPF4_Gain_Slop1>
+        <!--0x6xea[7:6]-->
+        <LPF4_Light_Thre2>0x60eb,0x61eb</LPF4_Light_Thre2>
+        <!--0x6xeb[3:0]-->
+        <LPF4_Light_Slop2>0x60eb,0x61eb</LPF4_Light_Slop2>
+        <!--0x6xeb[7:6]-->
+        <LPF5_Enable>0x60e6,0x61e6</LPF5_Enable>
+        <!--manual: 0x6xe6[1]=1, auto:  0x6xe6[1]=0-->
+        <Base_Strength_Manual>0x60b0,0x61b0</Base_Strength_Manual>
+        <!--0x6xb0[7:0]-->
+        <Base_Strength_Auto1x>0x60b0,0x61b0</Base_Strength_Auto1x>
+        <!--0x6xb0[7:4]*16 -->
+        <Base_Strength_Auto2x>0x60b1,0x61b1</Base_Strength_Auto2x>
+        <!--0x6xb1[7:4]*16 -->
+        <Base_Strength_Auto4x>0x60b2,0x61b2</Base_Strength_Auto4x>
+        <!--0x6xb2[7:4]*16 -->
+        <Base_Strength_Auto8x>0x60b3,0x61b3</Base_Strength_Auto8x>
+        <!--0x6xb3[7:4]*16 -->
+        <Base_Strength_Auto16x>0x60b4,0x61b4</Base_Strength_Auto16x>
+        <!--0x6xb4[7:4]*16 -->
+        <Base_Strength_Auto32x>0x60b5,0x61b5</Base_Strength_Auto32x>
+        <!--0x6xb5[7:4]*16 -->
+        <Base_Strength_Auto64x>0x60b6,0x61b6</Base_Strength_Auto64x>
+        <!--0x6xb6[7:4]*16 -->
+        <Max_Adjustment_Manual>0x60b1,0x61b1</Max_Adjustment_Manual>
+        <!--0x6xb1[7:0]-->
+        <Max_Adjustment_Auto1x>0x60b0,0x61b0</Max_Adjustment_Auto1x>
+        <!--0x6xb0[3:0]*16 -->
+        <Max_Adjustment_Auto2x>0x60b1,0x61b1</Max_Adjustment_Auto2x>
+        <!--0x6xb1[3:0]*16 -->
+        <Max_Adjustment_Auto4x>0x60b2,0x61b2</Max_Adjustment_Auto4x>
+        <!--0x6xb2[3:0]*16 -->
+        <Max_Adjustment_Auto8x>0x60b3,0x61b3</Max_Adjustment_Auto8x>
+        <!--0x6xb3[3:0]*16 -->
+        <Max_Adjustment_Auto16x>0x60b4,0x61b4</Max_Adjustment_Auto16x>
+        <!--0x6xb4[3:0]*16 -->
+        <Max_Adjustment_Auto32x>0x60b5,0x61b5</Max_Adjustment_Auto32x>
+        <!--0x6xb5[3:0]*16 -->
+        <Max_Adjustment_Auto64x>0x60b6,0x61b6</Max_Adjustment_Auto64x>
+        <!--0x6xb6[3:0]*16 -->
+        <Base_Point>0x60b7,0x61b7</Base_Point>
+        <!--0x6xb7[3:0]-->
+        <Adjustment_Speed>0x60b7,0x61b7</Adjustment_Speed>
+        <!--0x6xb7[7:4]-->
+        <!--122AT使用寄存器-->
+        <Enable_122>0x60e0,0x61e0,0x62e0</Enable_122>
+        <!--Enable: 0x6xe0[0]=1, 122AT:Short,0x62e0-->
+        <NRMode_122>0x60bf,0x61bf</NRMode_122>
+        <!--Mode:NR选择开启新去噪模式-->
+        <FinalStrengthType_122>0x60e8,0x61e8</FinalStrengthType_122>
+        <!--0x6xe8[5]置“0”，打开最终强度手动设置, 0x6xe8[5]置“1”，打开str自动设置-->
+        <Manual_FinalStrength_122>0x60e8,0x61e8</Manual_FinalStrength_122>
+        <!--设置0x6xe8[4:0](0x00~0x10)来实现str的手动设置-->
+        <Auto_FinalStrength_Gain1x_122>0x60bb,0x61bb</Auto_FinalStrength_Gain1x_122>
+        <!--0x6xbb[3:0] 为增益1倍时的str大小-->
+        <Auto_FinalStrength_Gain2x_122>0x60bb,0x61bb</Auto_FinalStrength_Gain2x_122>
+        <!--0x6xbb[7:4] 为增益2倍时的str大小-->
+        <Auto_FinalStrength_Gain4x_122>0x60bc,0x61bc</Auto_FinalStrength_Gain4x_122>
+        <!--0x6xbc[3:0] 为增益4倍时的str大小-->
+        <Auto_FinalStrength_Gain8x_122>0x60bc,0x61bc</Auto_FinalStrength_Gain8x_122>
+        <!--0x6xbc[7:4] 为增益8倍时的str大小-->
+        <Auto_FinalStrength_Gain16x_122>0x60bd,0x61bd</Auto_FinalStrength_Gain16x_122>
+        <!--0x6xbd[3:0] 为增益16倍时的str大小-->
+        <Auto_FinalStrength_Gain32x_122>0x60bd,0x61bd</Auto_FinalStrength_Gain32x_122>
+        <!--0x6xbd[7:4] 为增益32倍时的str大小-->
+        <Auto_FinalStrength_Gain64x_122>0x60be,0x61be</Auto_FinalStrength_Gain64x_122>
+        <!--0x6xbe[3:0] 为增益不小于64倍时的str大小-->
+        <NR_Short_Type>0x62ec</NR_Short_Type>
+        <!--0x62ec[7]置1为手动模式, 0x62ec[7]置0为自动模式-->
+        <NR_Short_Manual_Strength>0x62ec</NR_Short_Manual_Strength>
+        <!--0x62ec[6:0]为去噪强度设置，值越大去噪强度越小，值为0x40时，去噪强度为0-->
+        <NR_Short_Auto_Thre_Base>0x62eb</NR_Short_Auto_Thre_Base>
+        <!--0x62eb[4:0]设置细节判断阈值基准值，边缘特征值大于此阈值去噪开始减弱-->
+        <NR_Short_Auto_Thre_Ratio>0x62eb</NR_Short_Auto_Thre_Ratio>
+        <!--0x62eb[7:5]设置阈值ratio，值越大，阈值越小，去噪强度会越小-->
+        <NR_Short_Auto_Strength_Max>0x62ec</NR_Short_Auto_Strength_Max>
+        <!--0x62ec[6:0]为去噪最大强度设置。0，最强，0x40，最小-->
+    </regAddrInfo_NR>
+	<regAddrInfo_CCM_120>
+        <CCMH_BG>0x5118,0x5119</CCMH_BG>
+        <!--0x5118[2:0],0x5119[7:0], /256-->
+        <CCMH_BR>0x511a,0x511b</CCMH_BR>
+        <!--0x511a[2:0],0x511b[7:0], /256-->
+        <CCMH_GB>0x511c,0x511d</CCMH_GB>
+        <!--0x511c[2:0],0x511d[7:0], /256-->
+        <CCMH_GR>0x511e,0x511f</CCMH_GR>
+        <!--0x511e[2:0],0x511f[7:0], /256-->
+        <CCMH_RB>0x5120,0x5121</CCMH_RB>
+        <!--0x5120[2:0],0x5121[7:0], /256-->
+        <CCMH_RG>0x5122,0x5123</CCMH_RG>
+        <!--0x5122[2:0],0x5123[7:0], /256-->
+        <CCML_BG>0x5124,0x5125</CCML_BG>
+        <!--0x5124[2:0],0x5125[7:0], /256-->
+        <CCML_BR>0x5126,0x5127</CCML_BR>
+        <!--0x5126[2:0],0x5127[7:0], /256-->
+        <CCML_GB>0x5128,0x5129</CCML_GB>
+        <!--0x5128[2:0],0x5129[7:0], /256-->
+        <CCML_GR>0x512a,0x512b</CCML_GR>
+        <!--0x512a[2:0],0x512b[7:0], /256-->
+        <CCML_RB>0x512c,0x512d</CCML_RB>
+        <!--0x512c[2:0],0x512d[7:0], /256-->
+        <CCML_RG>0x512e,0x512f</CCML_RG>
+        <!--0x512e[2:0],0x512f[7:0], /256-->
+    </regAddrInfo_CCM_120>
+    <regAddrInfo_CCM>
+        <CCMH_BG ReadOnly="1">0x5118,0x5119</CCMH_BG>
+        <!--0x5118[2:0],0x5119[7:0], /256-->
+        <CCMH_BR ReadOnly="1">0x511a,0x511b</CCMH_BR>
+        <!--0x511a[2:0],0x511b[7:0], /256-->
+        <CCMH_GB ReadOnly="1">0x511c,0x511d</CCMH_GB>
+        <!--0x511c[2:0],0x511d[7:0], /256-->
+        <CCMH_GR ReadOnly="1">0x511e,0x511f</CCMH_GR>
+        <!--0x511e[2:0],0x511f[7:0], /256-->
+        <CCMH_RB ReadOnly="1">0x5120,0x5121</CCMH_RB>
+        <!--0x5120[2:0],0x5121[7:0], /256-->
+        <CCMH_RG ReadOnly="1">0x5122,0x5123</CCMH_RG>
+        <!--0x5122[2:0],0x5123[7:0], /256-->
+        <CCML_BG ReadOnly="1">0x5124,0x5125</CCML_BG>
+        <!--0x5124[2:0],0x5125[7:0], /256-->
+        <CCML_BR ReadOnly="1">0x5126,0x5127</CCML_BR>
+        <!--0x5126[2:0],0x5127[7:0], /256-->
+        <CCML_GB ReadOnly="1">0x5128,0x5129</CCML_GB>
+        <!--0x5128[2:0],0x5129[7:0], /256-->
+        <CCML_GR ReadOnly="1">0x512a,0x512b</CCML_GR>
+        <!--0x512a[2:0],0x512b[7:0], /256-->
+        <CCML_RB ReadOnly="1">0x512c,0x512d</CCML_RB>
+        <!--0x512c[2:0],0x512d[7:0], /256-->
+        <CCML_RG ReadOnly="1">0x512e,0x512f</CCML_RG>
+        <!--0x512e[2:0],0x512f[7:0], /256-->
+    </regAddrInfo_CCM>
+    <regAddrInfo_CCM_ISPC>
+        <CCMH_BG ReadOnly="1">0xc110,0xc111</CCMH_BG>
+        <!--0xc110[2:0],0xc111[7:0], /256-->
+        <CCMH_BR ReadOnly="1">0xc112,0xc113</CCMH_BR>
+        <!--0xc112[2:0],0xc113[7:0], /256-->
+        <CCMH_GB ReadOnly="1">0xc114,0xc115</CCMH_GB>
+        <!--0xc114[2:0],0xc115[7:0], /256-->
+        <CCMH_GR ReadOnly="1">0xc116,0xc117</CCMH_GR>
+        <!--0xc116[2:0],0xc117[7:0], /256-->
+        <CCMH_RB ReadOnly="1">0xc118,0xc119</CCMH_RB>
+        <!--0xc118[2:0],0xc119[7:0], /256-->
+        <CCMH_RG ReadOnly="1">0xc11a,0xc11b</CCMH_RG>
+        <!--0xc11a[2:0],0xc11b[7:0], /256-->
+        <CCML_BG ReadOnly="1">0xc11c,0xc11d</CCML_BG>
+        <!--0xc11c[2:0],0xc11d[7:0], /256-->
+        <CCML_BR ReadOnly="1">0xc11e,0xc11f</CCML_BR>
+        <!--0xc11e[2:0],0xc11f[7:0], /256-->
+        <CCML_GB ReadOnly="1">0xc120,0xc121</CCML_GB>
+        <!--0xc120[2:0],0xc121[7:0], /256-->
+        <CCML_GR ReadOnly="1">0xc122,0xc123</CCML_GR>
+        <!--0xc122[2:0],0xc123[7:0], /256-->
+        <CCML_RB ReadOnly="1">0xc124,0xc125</CCML_RB>
+        <!--0xc124[2:0],0xc125[7:0], /256-->
+        <CCML_RG ReadOnly="1">0xc126,0xc127</CCML_RG>
+        <!--0xc126[2:0],0xc127[7:0], /256-->
+        <Current_Gain ReadOnly="1">0x3e08,0x3e09</Current_Gain>
+        <!--当前实时增益-->
+        <Gain_Start_Th>0x7420,0x7421</Gain_Start_Th>
+        <!--gain_start_th-->
+        <Gain_End_Th>0x7424,0x7425</Gain_End_Th>
+        <!--gain_end_th-->
+        <MCU>0x4719</MCU>
+        <!--hold MCU--->
+		<CTH ReadOnly="1">0x5102,0x5103</CTH>
+		<!--0x5102[0],0x5103[7:0]-->
+		<CTL ReadOnly="1">0x5104,0x5105</CTL>
+		<!--0x5104[0],0x5105[7:0]-->
+		<CCM_ISPCReg ReadOnly="1">0xc110~0xc127</CCM_ISPCReg>
+		<CCM_ISPCExReg>0x7400~0x7402,0x7404~0x7406,0x7408~0x740a,0x740c~0x740e,0x7410~0x7412,0x7414~0x7416,0x7418~0x741a,0x741c~0x741e</CCM_ISPCExReg>
+    </regAddrInfo_CCM_ISPC>
+    <regAddrInfo_Contrast>
+        <a_min_low_level>0x510e,0x510f</a_min_low_level>
+        <!--0x510e[3:0],0x510f[7:0], -->
+        <a_max_low_level>0x5110,0x5111</a_max_low_level>
+        <!--0x5110[3:0],0x5111[7:0], -->
+        <b_min_low_level>0x51ee,0x51ef</b_min_low_level>
+        <!--0x51ee[3:0],0x51ef[7:0], -->
+        <b_max_low_level>0x51f0,0x51f1</b_max_low_level>
+        <!--0x51f0[3:0],0x51f1[7:0], -->
+        <Current_Gain>0x3e08~0x3e09</Current_Gain>
+        <!--当前实时增益-->
+        <thre_l>0x51e6,0x51e7</thre_l>
+        <!--0x51e6[3:0],0x51e7[7:0], -->
+        <thre_2>0x51e8,0x51e9</thre_2>
+        <!--0x51e8[3:0],0x51e9[7:0], -->
+    </regAddrInfo_Contrast>
+    <regAddrInfo_Contrast_122>
+        <Enable>0x500c</Enable>
+        <!--0x500c[0] -->
+        <current_hight_level ReadOnly="1">0x5285</current_hight_level>
+        <!--0x5285[7:0], read-->
+        <hight_level_type>0x5280</hight_level_type>
+        <!--0x5280[1], 自动/手动模式切换-->
+        <hight_level_manual>0x5290</hight_level_manual>
+        <!--0x5290, 手动模式下对比度调整-->
+        <hight_level_auto>0x5290~0x5297</hight_level_auto>
+        <!--0x5290~0x5297 自动模式下随增益自适应-->
+        <current_low_level ReadOnly="1">0x5286</current_low_level>
+        <!--0x5286[7:0], read-->
+        <low_level_type>0x5280</low_level_type>
+        <!--0x5280[2], 自动/手动模式切换-->
+        <low_level_manual>0x5298</low_level_manual>
+        <!--0x5298, 手动模式下对比度调整-->
+        <low_level_auto>0x5298~0x529f</low_level_auto>
+        <!--0x5298~0x529f 自动模式下随增益自适应-->
+        <a_min_low_level>0x510e,0x510f</a_min_low_level>
+        <!--0x510e[3:0],0x510f[7:0], -->
+        <a_max_low_level>0x5110,0x5111</a_max_low_level>
+        <!--0x5110[3:0],0x5111[7:0], -->
+        <b_min_low_level>0x51ee,0x51ef</b_min_low_level>
+        <!--0x51ee[3:0],0x51ef[7:0], -->
+        <b_max_low_level>0x51f0,0x51f1</b_max_low_level>
+        <!--0x51f0[3:0],0x51f1[7:0], -->
+        <Current_Gain ReadOnly="1">0x60ef,0x60a0</Current_Gain>
+        <!--当前实时增益-->
+        <thre_l>0x51e6,0x51e7</thre_l>
+        <!--0x51e6[3:0],0x51e7[7:0], -->
+        <thre_2>0x51e8,0x51e9</thre_2>
+        <!--0x51e8[3:0],0x51e9[7:0], -->
+    </regAddrInfo_Contrast_122>
+    <regAddrInfo_AutoLowLevel>
+        <CurvePreEnable>0x5011</CurvePreEnable>
+        <!-- 0x5011[5] 置1 打开curve pre模块 -->
+        <LowLevelType>0x5a96</LowLevelType>
+        <!-- 0x5a96[7] 置1，进入手动模式
+             0x5a96[7] 置0，进入自动模式 -->
+        <ManualLowLevel>0x5a96</ManualLowLevel>
+        <!-- 0x5a96[6:0]，设置手动输入的low level 变化大小 -->
+        <AutolLowLevel>0x5aa4</AutolLowLevel>
+        <!-- 0x5aa4，为low level 自动变化时的实际大小 -->
+        <LowLevelStartGain>0x5add</LowLevelStartGain>
+        <!-- 0x5add设置low level 随增益变化的增益起始值，增益大于这个值，low level开始变化 -->
+        <LowLevelSpeedGain>0x5adc</LowLevelSpeedGain>
+        <!-- 0x5adc[1:0]，设置low level 随增益变化的快慢，2’b00,2’b01,2’b10,2’b11对应1/8,2/8,3/8,4/8 -->
+        <LowLevelMaxGain>0x5ade</LowLevelMaxGain>
+        <!-- 0x5ade[3:0]，*4，设置low level随增益变化最大值 -->
+        <LowLevelSpeedTemp>0x5adc</LowLevelSpeedTemp>
+        <!-- 0x5adc[3:2]，设置low level 随温度升高变化的快慢，2’b00,2’b01,2’b10,2’b11对应0,1,2,4 -->
+        <LowLevelMaxTemp>0x5ade</LowLevelMaxTemp>
+        <!-- 0x5ade[7:4]，*4，设置low level随温度变化最大值 -->
+        <BrightInputChoose>0x5a96</BrightInputChoose>
+        <!-- 0x5a96[6]，选择不同的亮度输入作为判断，0：选择AE长曝光的平均值；1：选择curev之后的平均值 -->
+        <LowLevelStartBright>0x5a97</LowLevelStartBright>
+        <!-- 0x5a97[3:0]，*8设置low level 随亮度变化的亮度起始值（8bit，高位补零，显示运算后的value），亮度小于这个值，low level开始变化 -->
+        <LowLevelSpeedBright>0x5a96</LowLevelSpeedBright>
+        <!-- 0x5a96[5:4]，设置low level 随亮度变化的快慢，2’b00,2’b01,2’b10,2’b11对应1/8,2/8,3/8,4/8 -->
+        <LowLevelMaxBright>0x5a97</LowLevelMaxBright>
+        <!-- 0x5a97[7:4]，*2，设置low level随增益变化最大值 -->
+        <CurrentGain ReadOnly="1">0x60ef</CurrentGain>
+        <!--Current gain :0x60ef-->
+        <CurrentTemp ReadOnly="1">0x5ae7</CurrentTemp>
+        <!--Current temperature :0x5ae7[5:0]-->
+        <!-- TemperatureEigenvalues-->
+        <TemperatureType>0x52ad</TemperatureType>
+        <!-- 0x5602[6]=0/1 自动/手动模式切换-->
+        <TemperatureManualValue>0x52ad,0x52ae</TemperatureManualValue>
+        <!-- 0x52ad[5:4], 0x52ae[7:0]手动调整附加增益-->
+        <TemperatureAutoThre>0x52ae</TemperatureAutoThre>
+        <!-- 0x52ae[5:0] 温度特征值计算阈值，当高温特征值大于阈值，温度特征值为正，否则为0-->
+        <TemperatureAutoRadio>0x52ae</TemperatureAutoRadio>
+        <!-- 0x52ae[7:6] 高温特征值计算的ratio，2’b00: 0.5x; 2’b01: 1x; 2’b10: 2x; 2’b11: 4x-->
+        <TemperatureAutoCurValue ReadOnly="1">0x52b6,0x52b7</TemperatureAutoCurValue>
+        <!-- 0x52b6[2:0],0x52b7[7:0] 当前的温度特征值计算值 -->
+        <TemperatureEnable>0x5032</TemperatureEnable>
+        <TemperatureLensEnable>0x5032</TemperatureLensEnable>
+        <!-- 0x5032[5] lens, 0x5032[2] CIP,AEB,SAT_CON-->
+		<AutoLowLevelEnable>0x5101</AutoLowLevelEnable>
+        <!-- 0x5101[4]-->
+    </regAddrInfo_AutoLowLevel>
+    <regAddrInfo_Tonemapping>
+        <max_gamma>0x5dd0,0x5dd1</max_gamma>
+        <!--0x5dd0[1:0],0x5dd1[7:0], -->
+        <max_gamma_0>0x5d0a,0x5d0b</max_gamma_0>
+        <!--0x5d0a[1:0],0x5d0b[7:0], -->
+        <max_gamma_1>0x5d0c,0x5d0d</max_gamma_1>
+        <!--0x5d0c[1:0],0x5d0d[7:0], -->
+        <max_gamma_2>0x5d0e,0x5d0f</max_gamma_2>
+        <!--0x5d0e[1:0],0x5d0f[7:0], -->
+        <max_gamma_3>0x5d10,0x5d11</max_gamma_3>
+        <!--0x5d10[1:0],0x5d11[7:0], -->
+        <global_gamma>0x5dd4,0x5dd5</global_gamma>
+        <!--0x5dd4[1:0],0x5dd5[7:0], -->
+        <global_gamma_0>0x5d12,0x5d13</global_gamma_0>
+        <!--0x5d12[1:0],0x5d13[7:0], -->
+        <global_gamma_1>0x5d14,0x5d15</global_gamma_1>
+        <!--0x5d14[1:0],0x5d15[7:0], -->
+        <global_gamma_2>0x5d16,0x5d17</global_gamma_2>
+        <!--0x5d16[1:0],0x5d17[7:0], -->
+        <global_gamma_3>0x5d18,0x5d19</global_gamma_3>
+        <!--0x5d18[1:0],0x5d19[7:0], -->
+        <dynamic_range_0>0x5d02,0x5d03</dynamic_range_0>
+        <!--0x5d02[5:0],0x5d03[7:0], -->
+        <dynamic_range_1>0x5d04,0x5d05</dynamic_range_1>
+        <!--0x5d04[5:0],0x5d05[7:0], -->
+        <dynamic_range_2>0x5d06,0x5d07</dynamic_range_2>
+        <!--0x5d06[5:0],0x5d07[7:0], -->
+        <dynamic_range_3>0x5d08,0x5d09</dynamic_range_3>
+        <!--0x5d08[5:0],0x5d09[7:0], -->
+        <curve_alpha>0x5d26,0x5d27,0x5d28,0x5d29</curve_alpha>
+        <!--[4:0]-->
+        <switch_point>0x5b01</switch_point>
+        <h_fre_ratio>0x5b35,0x5b36,0x5b37,0x5b38,0x5b39,0x5b3a</h_fre_ratio>
+    </regAddrInfo_Tonemapping>
+    <regAddrInfo_TonemappingComBine>
+        <!--0x5d00[7]-->
+        <DRModel>0x5d00</DRModel>
+        <!--0x5006[4]-->
+        <DRAutoModel>0x5006</DRAutoModel>
+        <!--0x5b40,0x5b41,0x5b42-->
+        <DRGain>0x5b40,0x5b41,0x5b42</DRGain>
+        <!--0x5aa2[5:0],0x5aa3-->
+        <DRISO>0x5aa2,0x5aa3</DRISO>
+        <!--0x5d40[5:0],0x5d41, -->
+        <DRManual>0x5d40,0x5d41</DRManual>
+        <!--ToneMapping-->
+        <DynamicRange0>0x5d02,0x5d03</DynamicRange0>
+        <DynamicRange1>0x5d04,0x5d05</DynamicRange1>
+        <DynamicRange2>0x5d06,0x5d07</DynamicRange2>
+        <DynamicRange3>0x5d08,0x5d09</DynamicRange3>
+        <!--0x5d02[5:0],0x5d03[7:0], -->
+        <LocalTMEnable>0x5d00</LocalTMEnable>
+        <!--0x5d00[0], -->
+        <MaxGamma0>0x5d0a,0x5d0b</MaxGamma0>
+        <MaxGamma1>0x5d0c,0x5d0d</MaxGamma1>
+        <MaxGamma2>0x5d0e,0x5d0f</MaxGamma2>
+        <MaxGamma3>0x5d10,0x5d11</MaxGamma3>
+        <!--0x5d40[5:0],0x5d41, -->
+        <DynamicRangeManual>0x5d40,0x5d41</DynamicRangeManual>
+        <!--0x5d0a[1:0],0x5d0b[7:0], -->
+        <MinGamma0>0x5d48,0x5d49</MinGamma0>
+        <MinGamma1>0x5d4a,0x5d4b</MinGamma1>
+        <MinGamma2>0x5d4c,0x5d4d</MinGamma2>
+        <MinGamma3>0x5d4e,0x5d4f</MinGamma3>
+        <!--0x5d48[1:0],0x5d49[7:0], -->
+        <LocalGammaAlpha>0x5d1a~0x5d1d</LocalGammaAlpha>
+        <!--[4:0], -->
+        <LTMAlpha2>0x5d8f</LTMAlpha2>
+        <!--0x5d8f[4:0], -->
+        <LocalGammaStep>0x5d1e~0x5d21</LocalGammaStep>
+        <!--[4:0], -->
+        <LocalShift>0x5d52</LocalShift>
+        <!--0x5d52[1:0], -->
+        <GlobalGamma0>0x5d12,0x5d13</GlobalGamma0>
+        <GlobalGamma1>0x5d14,0x5d15</GlobalGamma1>
+        <GlobalGamma2>0x5d16,0x5d17</GlobalGamma2>
+        <GlobalGamma3>0x5d18,0x5d19</GlobalGamma3>
+        <!--0x5d12[1:0],0x5d13[7:0], -->
+        <GammaAdjustThre>0x5d43</GammaAdjustThre>
+        <!--0x5d43[7:0], -->
+        <GainThre1>0x5da0,0x5da1</GainThre1>
+        <!--0x5da0[1:0],0x5da1[7:0], -->
+        <GainThre2>0x5da2,0x5da3</GainThre2>
+        <!-- 0x5da2[1:0],0x5da3[7:0], -->
+        <CurveStep1>0x5d80~0x5d8e</CurveStep1>
+        <!--[4:0], -->
+        <CurveStep2>0x5d90~0x5d9e</CurveStep2>
+        <!--[4:0], -->
+        <CurveAlpha>0x5d26~0x5d29</CurveAlpha>
+        <!--[4:0]-->
+        <HistEQEnable>0x5d00</HistEQEnable>
+        <!--0x5d00[4], -->
+        <HistPointStep>0x5d22~0x5d25</HistPointStep>
+        <!--[4:0], -->
+        <HistEQ>0x5d30~0x5d3e</HistEQ>
+        <!--[7:0], -->
+        <LogTarget>0x5d44,0x5d45</LogTarget>
+        <!--0x5d44[4:0],0x5d45[7:0], -->
+        <TargetStep>0x5d46</TargetStep>
+        <!--0x5d46[4:0], -->
+        <GammaAdjustStep>0x5d3f</GammaAdjustStep>
+        <!--0x5d3f[4:0], -->
+        <CurrentDynamicRange ReadOnly="1">0x5b45,0x5b46</CurrentDynamicRange>
+        <!--0x5b45 & 0x5b46-->
+        <CurrentDynamicRangeFlag130>0x5019</CurrentDynamicRangeFlag130>
+        <!--0x5019[7]=1,显示Type1，0x5019[7]=0显示Type0-->
+        <CurrentDynamicRange130_Type0 ReadOnly="1">0x5b40,0x5b41,0x5b42</CurrentDynamicRange130_Type0>
+        <!--0x5b40 & 0x5b41 & 0x5b42-->
+        <CurrentDynamicRange130_Type1 ReadOnly="1">0x5aae,0x5afb</CurrentDynamicRange130_Type1>
+        <!--0x5aae & 0x5afb-->
+        <CurrentMaxGamma ReadOnly="1">0x5dd0,0x5dd1</CurrentMaxGamma>
+        <!--0x5dd0[1:0],0x5dd1[7:0]-->
+        <CurrentMinGamma ReadOnly="1">0x5dd2,0x5dd3</CurrentMinGamma>
+        <!--0x5dd2[1:0],0x5dd3[7:0]-->
+        <CurrentGlobalGamma ReadOnly="1">0x5dd4,0x5dd5</CurrentGlobalGamma>
+        <!--0x5dd4[1:0],0x5dd5[7:0]-->
+        <CurrentLocalGammaAlpha ReadOnly="1">0x5dd6</CurrentLocalGammaAlpha>
+        <!--0x5dd6[4:0]-->
+        <CurrentLocalGammaStep ReadOnly="1">0x5dd7</CurrentLocalGammaStep>
+        <!--0x5dd7[4:0]-->
+        <CurrentCurveAlpha ReadOnly="1">0x5dd8</CurrentCurveAlpha>
+        <!--0x5dd8[4:0]-->
+        <CurrentHistPointStep ReadOnly="1">0x5dd9</CurrentHistPointStep>
+        <!--0x5dd9[4:0]-->
+        <!--Combine-->
+        <!--0x608e[5:4],-->
+        <DarkColorGainSpeed>0x608e</DarkColorGainSpeed>
+        <!--0x5b51[5:0],-->
+        <DarkColorThre>0x5b51</DarkColorThre>
+        <!--0x5b51[7],-->
+        <DarkColorEnable>0x5b51</DarkColorEnable>
+        <!--0x608e[3:0],-->
+        <DarkColorStartGain>0x608e</DarkColorStartGain>
+        <!--0x5b63[3:0],-->
+        <DarkColorEndGain>0x5b63</DarkColorEndGain>
+        <!--0x5b63[7:4],-->
+        <DarkColorHEnable>0x5b64</DarkColorHEnable>
+        <!--0x60a9,-->
+        <DarkColorExtent>0x60a9</DarkColorExtent>
+        <!--0x5b64[6],-->
+        <LFSThre1>0x5b57</LFSThre1>
+        <!--0x5b57[7:0],-->
+        <LFSThre2>0x5b58,0x5b59</LFSThre2>
+        <!--0x5b58[3:0],0x5b59[7:0],-->
+        <LFSThre3>0x5b5a</LFSThre3>
+        <!--0x5b5a[4:0],-->
+        <LFSThre4>0x5b5b</LFSThre4>
+        <!--0x5b5b[5:0],-->
+        <LFSThre5>0x5b5c</LFSThre5>
+        <!--0x5b5c[7:0],-->
+        <LFSThre6>0x5b5d</LFSThre6>
+        <!--0x5b5d[5:0],-->
+        <LFSThre7>0x5b5e,0x5b5f</LFSThre7>
+        <!--0x5b5e[3:0],0x5b5f[7:0],-->
+        <LFSBloomingEnable>0x5b61</LFSBloomingEnable>
+        <!--0x5b61[6],-->
+        <!--Combine Weight-->
+        <BloomingModeEnable>0x5b0f</BloomingModeEnable>
+        <!--0x5b0f[5],-->
+        <BloomingMode2Enable>0x5b61</BloomingMode2Enable>
+        <!--0x5b61[0],-->
+        <HighMargin>0x5b01</HighMargin>
+        <!--0x5b01[7:0],-->
+        <MaxWeight>0x5b0e</MaxWeight>
+        <!--0x5b0e[],-->
+        <LongExposure>0x5b0c</LongExposure>
+        <!--0x5b0c[],-->
+        <MiddleExposure>0x5b0d</MiddleExposure>
+        <!--0x5b0d[],-->
+        <BloomingShift>0x5b0f</BloomingShift>
+        <!--0x5b0f[7:6],-->
+        <BloomingSShift>0x5b61</BloomingSShift>
+        <!--0x5b61[3:2],-->
+        <HList1>0x5b35~0x5b37</HList1>
+        <!--[7:0],-->
+        <HList2>0x5b38~0x5b3a</HList2>
+        <!--[7:0],-->
+        <CompsEnable>0x5b0f</CompsEnable>
+        <!--0x5b0f[0]-->
+        <CompSlope>0x5b20~0x5b2f</CompSlope>
+        <!--0x5b20[4:0],0x5b21[7:0],共8组-->
+        <!--EdgeTuning-->
+        <!--0x5b56[7],-->
+        <EdgeTuningLongMiddle>0x5b56</EdgeTuningLongMiddle>
+        <!--0x5b56[3:0],-->
+        <EdgeTuningLongMiddleEdgeThre>0x5b56</EdgeTuningLongMiddleEdgeThre>
+        <!--0x5b56[6:4],-->
+        <EdgeTuningLongMiddleStrength>0x5b56</EdgeTuningLongMiddleStrength>
+        <!--0x51f4[3],-->
+        <EdgeTuningLongMiddleBlackEdge>0x51f4</EdgeTuningLongMiddleBlackEdge>
+        <!--0x51f6[7],-->
+        <EdgeTuningLongMiddleManual>0x51f6</EdgeTuningLongMiddleManual>
+        <!--0x51f6[6:0],-->
+        <EdgeTuningLongMiddleManualThre>0x51f6</EdgeTuningLongMiddleManualThre>
+        <!--0x51f4[2:0],-->
+        <EdgeTuningLongMiddleLimitFactor>0x51f4</EdgeTuningLongMiddleLimitFactor>
+        <!--0x51f5[],-->
+        <EdgeTuningLongMiddleMaxThre>0x51f5</EdgeTuningLongMiddleMaxThre>
+        <!--0x51f6[6:0],-->
+        <EdgeTuningLongMiddleMinThre>0x51f6</EdgeTuningLongMiddleMinThre>
+        <!--0x5b56[7],-->
+        <EdgeTuningMiddleShort>0x5b57</EdgeTuningMiddleShort>
+        <!--0x5b56[3:0],-->
+        <EdgeTuningMiddleShortEdgeThre>0x5b57</EdgeTuningMiddleShortEdgeThre>
+        <!--0x5b56[6:4],-->
+        <EdgeTuningMiddleShortStrength>0x5b57</EdgeTuningMiddleShortStrength>
+        <!--0x51f4[3],-->
+        <EdgeTuningMiddleShortBlackEdge>0x51f4</EdgeTuningMiddleShortBlackEdge>
+        <!--0x51f6[7],-->
+        <EdgeTuningMiddleShortManual>0x51f6</EdgeTuningMiddleShortManual>
+        <!--0x51f6[6:0],-->
+        <EdgeTuningMiddleShortManualThre>0x51f6</EdgeTuningMiddleShortManualThre>
+        <!--0x51f4[2:0],-->
+        <EdgeTuningMiddleShortLimitFactor>0x51f4</EdgeTuningMiddleShortLimitFactor>
+        <!--0x51f5[],-->
+        <EdgeTuningMiddleShortMaxThre>0x51f5</EdgeTuningMiddleShortMaxThre>
+        <!--0x51f6[6:0],-->
+        <EdgeTuningMiddleShortMinThre>0x51f6</EdgeTuningMiddleShortMinThre>
+    </regAddrInfo_TonemappingComBine>
+    <regAddrInfo_MCU>
+        <LMean>0x6e30</LMean>
+        <LInttime>0x3e00~0x3e02</LInttime>
+        <LAGain>0x3e08,0x3e09</LAGain>
+        <Bit_Value>0xc8a4~0xc8a7</Bit_Value>
+        <Brightness_Thre>0xc8a8~0xc8ad</Brightness_Thre>
+        <current_state>0xc8a0</current_state>
+        <scene_enable>0x57db</scene_enable>
+        <!--0x57db[2:0], -->
+        <output_enable>0x57dc</output_enable>
+        <!--0x57dc[6:3], -->
+        <module_function_enable>0x4738,0x473b,0x4739,0x473a</module_function_enable>
+        <!--0x4738~0x473b[6:3], -->
+        <contrast_reg>0xc08f~0xc09e,0xc0bf~0xc0ce,0xc09f~0xc0ae,0xc0af~0xc0be</contrast_reg>
+        <gamma_reg>0xc1e2~0xc265,0xc3f2~0xc475,0xc2ea~0xc36d,0xc36e~0xc3f1</gamma_reg>
+        <gamma_b_reg>0xc476~0xc4f9</gamma_b_reg>
+        <ccm_reg>0xc13a~0xc151,0xc182~0xc199,0xc152~0xc169,0xc16a~0xc181</ccm_reg>
+        <configurable_reg>0xc786~0xc78f,0xc7e0~0xc7e9,0xc7a4~0xc7ad,0xc7c2~0xc7cb</configurable_reg>
+        <configurable_value_reg>0xc79a~0xc79e,0xc7f4~0xc7f8,0xc7b8~0xc7bc,0xc7d6~0xc7da</configurable_value_reg>
+        <contrast_sensor_reg>0x510a~0x5113,0x51ee,0x51ef</contrast_sensor_reg>
+        <gamma_sensor_reg>0x5140~0x5181,0x6300~0x6341</gamma_sensor_reg>
+        <gamma_b_sensor_reg>0x5182~0x51c3,0x6342~0x6383</gamma_b_sensor_reg>
+        <ccm_sensor_reg>0x5118~0x512f</ccm_sensor_reg>
+        <!-- <configurable_sensor_reg></configurable_sensor_reg> -->
+    </regAddrInfo_MCU>
+    <regAddrInfo_MCU_HDR>
+        <HDREnableNew>0x7532</HDREnableNew>
+        <!-- 0x7532[3] -->
+        <LoadEnable>0x4739,0x7532</LoadEnable>
+        <!-- 0x4739[1],0x7532[1] -->
+        <HDREnable>0x57db</HDREnable>
+        <!-- 0x57db[0] : max gamma
+             0x57db[1] : global gamma
+             0x57db[2] : local gamma alpha
+             0x57db[3] : curve alpha
+             0x57db[4] : high margin
+             0x57db[5] : awb luma low th
+             0x57db[6] : ae target
+             0x57db[7] : comps -->
+        <IntGainLuma ReadOnly="1">0xc012</IntGainLuma>
+        <!-- intL_m = 4/16，r_int_gain_luma[1][0] == 11
+             intL_m = 3/16，r_int_gain_luma[1][0] == 10
+             intL_m = 2/16，r_int_gain_luma[1][0] == 01
+             intL_m = 1/16，r_int_gain_luma[1][0] == 00
+             gainL_m = 8，  r_int_gain_luma[3][2] == 11
+             gainL_m = 7，  r_int_gain_luma[3][2] == 10
+             gainL_m = 5，  r_int_gain_luma[3][2] == 01
+             gainL_m = 4，  r_int_gain_luma[3][2] == 00
+             lumaL_m = 4，  r_int_gain_luma[5][4] == 11
+             lumaL_m = 3，  r_int_gain_luma[5][4] == 10
+             lumaL_m = 2，  r_int_gain_luma[5][4] == 01
+             lumaL_m = 1，  r_int_gain_luma[5][4] == 00 -->
+        <LumaTh ReadOnly="1">0xc011</LumaTh>
+        <Base ReadOnly="1">0xc013</Base>
+        <IntGainLumaUpdate ReadOnly="1">0x5d40,0x5d41</IntGainLumaUpdate>
+        <DyTh1 ReadOnly="1">0xc014</DyTh1>
+        <DyTh2 ReadOnly="1">0xc015</DyTh2>
+        <DyTh3 ReadOnly="1">0xc016</DyTh3>
+        <DyTh4 ReadOnly="1">0xc017</DyTh4>
+        <Para1 ReadOnly="1">0xc01a~0xc028</Para1>
+        <Para2 ReadOnly="1">0xc02a~0xc038</Para2>
+        <Para3 ReadOnly="1">0xc03a~0xc048</Para3>
+        <Para4 ReadOnly="1">0xc04a~0xc058</Para4>
+        <OutMaxGamma ReadOnly="1">0x5d0a,0x5d0b</OutMaxGamma>
+        <!-- 0x5d0a[1:0],0x5d0b[7:0] -->
+        <OutGlobalGamma ReadOnly="1">0x5d12,0x5d13</OutGlobalGamma>
+        <!-- 0x5d12[1:0],0x5d13[7:0] -->
+        <OutLocalGammaAlpha ReadOnly="1">0x5d1a</OutLocalGammaAlpha>
+        <!-- 0x5d1a[4:0] -->
+        <OutCurveAlpha ReadOnly="1">0x5d26</OutCurveAlpha>
+        <!-- 0x5d26[4:0] -->
+        <OutHighMargin ReadOnly="1">0x5b01</OutHighMargin>
+        <!-- 0x5b01[7:0] -->
+        <OutAwbLumaLowTh ReadOnly="1">0x5ac5</OutAwbLumaLowTh>
+        <!-- 0x5ac5[7:0] -->
+        <OutAETarget ReadOnly="1">0x5e62</OutAETarget>
+        <!-- 0x5e62[7:0] -->
+        <OutCompSlop ReadOnly="1">0x5b20~0x5b2f</OutCompSlop>
+        <!-- 0x5b20[4:0],0x5b21[7:0],共8组 -->
+		<ISPCReg ReadOnly="1">0xc011~0xc017,0xc01a~0xc028,0xc02a~0xc038,0xc03a~0xc048,0xc04a~0xc058</ISPCReg>
+		<ISPCRegEx>0x84d5~0x84db,0x8300~0x830e,0x8310~0x831e,0x8320~0x832e,0x8330~0x833e</ISPCRegEx>
+    </regAddrInfo_MCU_HDR>
+    <regAddrInfo_WBGraph>
+        <WBHToneTLVertical>0x5ad2</WBHToneTLVertical>
+        <WBHToneBLTilt>0x5ad4</WBHToneBLTilt>
+        <WBHToneBRHorizon>0x5ad0</WBHToneBRHorizon>
+        <WBHToneBRVertical>0x5ad3</WBHToneBRVertical>
+        <WBHToneTRTilt>0x5ad5</WBHToneTRTilt>
+        <WBHToneTLHorizon>0x5ad1</WBHToneTLHorizon>
+        <WBMToneTLVertical>0x5ad8</WBMToneTLVertical>
+        <WBMToneBLTilt>0x5ada</WBMToneBLTilt>
+        <WBMToneBRHorizon>0x5ad6</WBMToneBRHorizon>
+        <WBMToneBRVertical>0x5ad9</WBMToneBRVertical>
+        <WBMToneTRTilt>0x5adb</WBMToneTRTilt>
+        <WBMToneTLHorizon>0x5ad7</WBMToneTLHorizon>
+        <WBLToneTLVertical>0x5ade</WBLToneTLVertical>
+        <WBLToneBLTilt>0x5ace</WBLToneBLTilt>
+        <WBLToneBRHorizon>0x5adc</WBLToneBRHorizon>
+        <WBLToneBRVertical>0x5adf</WBLToneBRVertical>
+        <WBLToneTRTilt>0x5acf</WBLToneTRTilt>
+        <WBLToneTLHorizon>0x5add</WBLToneTLHorizon>
+        <WBBaseWhiteRH>0x5aaf</WBBaseWhiteRH>
+        <WBBaseWhiteRL>0x5aac</WBBaseWhiteRL>
+        <WBBaseWhiteGH>0x5aaf</WBBaseWhiteGH>
+        <WBBaseWhiteGL>0x5aad</WBBaseWhiteGL>
+        <WBBaseWhiteBH>0x5aaf</WBBaseWhiteBH>
+        <WBBaseWhiteBL>0x5aae</WBBaseWhiteBL>
+        <WBDivBaseRG>0x5ac9</WBDivBaseRG>
+        <WBDivBaseBG>0x5ac8</WBDivBaseBG>
+        <WBMulBaseRG>0x5abd</WBMulBaseRG>
+        <WBMulBaseBG>0x5abc</WBMulBaseBG>
+        <WBAnalyzeEnable>0x5ab0</WBAnalyzeEnable>
+        <WBAnalyzeISPEnable>0x5e00,0x5006,0x5ab0,0x5001,0x5100,0x5107,0x5019</WBAnalyzeISPEnable>
+        <!-- 关闭 ISP 相关处理的开关：
+             0x5e00[7]=1, 0x5006[0]=0, 0x5ab0[0]=0, 0x5001[4]=0;
+             0x5100=0x00, 0x5107=0x80 -->
+        <WBAnalyzBLC>0x3908</WBAnalyzBLC>
+    </regAddrInfo_WBGraph>
+    <regAddrInfo_Htemp>
+        <SatConEnable>0x500c</SatConEnable>
+        <!--Sat con Enable :0x500c[0]=1-->
+		<Enable>0x5e00</Enable>
+        <!--Enable :0x5e00[6]=1-->
+        <MaxGainWithHTempEnable>0x5ec5</MaxGainWithHTempEnable>
+        <!--MAX gain with high temperature Enable :0x5ec5[0]=1-->
+        <AutoModeEnable>0x52b0</AutoModeEnable>
+        <!--Manual Enable  Manual :0x52b0[7]=1 -->
+        <ManualMaxGain>0x52b3</ManualMaxGain>
+        <!--Manual max gain :0x52b3[7:0]-->
+        <AutoMaxGain>0x52b4,0x52b5</AutoMaxGain>
+        <!--Auto max gain :0x52b4[5:0] 0x52b5[7:0]-->
+        <CurrentHTempValue>0x5aa7</CurrentHTempValue>
+        <!--Auto max gain :0x5aa7[5:0]-->
+        <InHTempThre>0x52b0</InHTempThre>
+        <!--In high temp threshold :0x52b0[3:0]*2 + 0x52b0[6:4]-->
+        <OutHTempThre>0x52b0</OutHTempThre>
+        <!--In high temp threshold :0x52b0[3:0]*2 - 0x52b0[6:4]-->
+        <MaxGainAdjustSpeed>0x52b1</MaxGainAdjustSpeed>
+        <!--Max gain adjust speed :0x52b1[3:0]-->
+        <MaxGainAdjustSpeedMin>0x52b2</MaxGainAdjustSpeedMin>
+        <!--Max gain adjust speed minimum:0x52b2[3:0]-->
+        <MaxGainAdjustSpeedMax>0x52b2</MaxGainAdjustSpeedMax>
+        <!--Max gain adjust speed Maximum:0x52b27:4]*4-->
+        <HtempLSCRatio>0x5401</HtempLSCRatio>
+        <!--0x5401[7:4]-->
+        <HtempLSCHtemp>0x5401</HtempLSCHtemp>
+        <!--0x5401[3:0]-->
+        <HtempLSCGainThre>0x5400</HtempLSCGainThre>
+        <!--0x5400[5:0]-->
+        <HtempSatEnable>0x5404</HtempSatEnable>
+        <!--0x5404[7]-->
+        <GainThSat>0x5404</GainThSat>
+        <!--0x5404[6:0]-->
+        <SatBase>0x5409</SatBase>
+        <RatioSat>0x5407</RatioSat>
+        <SatMin>0x5405</SatMin>
+        <!--121at新增-->
+        <GlobalEnable>0x4719</GlobalEnable>
+        <!--总使能开关0x4719[7]=1开，0x4719[7]=0关-->
+        <LimitGainEnable>0x471b</LimitGainEnable>
+        <!--LimitGain使能开关0x471b[1]=1开，0x4719[7]=0关-->
+        <CurrentTemp ReadOnly="1">0x5ae7</CurrentTemp>
+        <TempThre>0x476d</TempThre>
+        <!--TempThre1=(0x476d & 0xf0) >> 3-->
+        <!--TempThre2=(0x476d & 0x0f) << 1-->
+        <MaxGain>0x476f</MaxGain>
+        <Delta>0x476e</Delta>
+        <!--Limit max gain: (0x476f << 6) - 0x476e -->
+		<TemperatureType>0x52ad</TemperatureType>
+        <!-- 0x5602[6]=0/1 自动/手动模式切换-->  
+        <TemperatureManualValue>0x52ad,0x52ae</TemperatureManualValue>
+        <!-- 0x52ad[5:4], 0x52ae[7:0]手动调整附加增益--> 
+        <TemperatureAutoThre>0x52ae</TemperatureAutoThre>
+        <!-- 0x52ae[5:0] 温度特征值计算阈值，当高温特征值大于阈值，温度特征值为正，否则为0-->
+        <TemperatureAutoRadio>0x52ae</TemperatureAutoRadio>
+        <!-- 0x52ae[7:6] 高温特征值计算的ratio，2’b00: 0.5x; 2’b01: 1x; 2’b10: 2x; 2’b11: 4x-->
+        <TemperatureAutoCurValue ReadOnly="1">0x52b6,0x52b7</TemperatureAutoCurValue>
+        <!-- 0x52b6[2:0],0x52b7[7:0] 当前的温度特征值计算值 -->
+		<TemperatureEnable>0x5032</TemperatureEnable>
+		<TemperatureLensEnable>0x5032</TemperatureLensEnable>
+		<!-- 0x5032[5] lens, 0x5032[2] CIP,AEB,SAT_CON-->
+    </regAddrInfo_Htemp>
+    <regAddrInfo_EEPROMLen>
+        <Length>0x4d04,0x4d05</Length>
+    </regAddrInfo_EEPROMLen>
+    <regAddrInfo_NotCleanList>
+        <Register>0x36e9,0x36f9</Register>
+        <!--最多支持128个寄存器-->
+    </regAddrInfo_NotCleanList>
+    <SavePageData>
+        <AESaveData>
+            <!--savepage reg list-->
+            <regCnt>75</regCnt>
+            <reg0>0x59ee,0x00</reg0>
+            <reg1>0x59ef,0x00</reg1>
+            <reg2>0x5e62,0x40</reg2>
+            <reg3>0x5e66,0x30</reg3>
+            <reg4>0x5e67,0x10</reg4>
+            <reg5>0x5e68,0x04</reg5>
+            <reg6>0x5e69,0x08</reg6>
+            <reg7>0x5e76,0x00</reg7>
+            <reg8>0x5e77,0x10</reg8>
+            <reg9>0x5e78,0x00</reg9>
+            <reg10>0x5e79,0x10</reg10>
+            <reg11>0x5e7a,0x00</reg11>
+            <reg12>0x5e7b,0x10</reg12>
+            <reg13>0x5e7c,0x03</reg13>
+            <reg14>0x5e7d,0xff</reg14>
+            <reg15>0x5e7e,0x00</reg15>
+            <reg16>0x5e7f,0x7f</reg16>
+            <reg17>0x5e80,0x00</reg17>
+            <reg18>0x5e81,0x10</reg18>
+            <reg19>0x5e82,0x03</reg19>
+            <reg20>0x5e83,0x00</reg20>
+            <reg21>0x5e84,0x00</reg21>
+            <reg22>0x5e85,0x80</reg22>
+            <reg23>0x5e86,0x00</reg23>
+            <reg24>0x5e87,0x10</reg24>
+            <reg25>0x5e88,0x05</reg25>
+            <reg26>0x5e89,0x98</reg26>
+            <reg27>0x5e8a,0x00</reg27>
+            <reg28>0x5e8b,0xa8</reg28>
+            <reg29>0x5e8c,0x00</reg29>
+            <reg30>0x5e8d,0x14</reg30>
+            <reg31>0x5ee4,0x30</reg31>
+            <reg32>0x5ee5,0x1c</reg32>
+            <reg33>0x5ee6,0x10</reg33>
+            <reg34>0x5ee8,0x02</reg34>
+            <reg35>0x5ee9,0x00</reg35>
+            <reg36>0x5eea,0x06</reg36>
+            <reg37>0x5eeb,0x00</reg37>
+            <reg38>0x5eec,0x18</reg38>
+            <reg39>0x5eed,0x00</reg39>
+            <reg40>0x5eee,0x2d</reg40>
+            <reg41>0x5eef,0x00</reg41>
+            <reg42>0x5e60,0x88</reg42>
+            <reg43>0x5e9b,0x00</reg43>
+            <reg44>0x5e9c,0x28</reg44>
+            <reg45>0x5e16,0x00</reg45>
+            <reg46>0x5e17,0x08</reg46>
+            <reg47>0x5e18,0x00</reg47>
+            <reg48>0x5e19,0x08</reg48>
+            <reg49>0x5e38,0x00</reg49>
+            <reg50>0x5e39,0x00</reg50>
+            <reg51>0x5e58,0x00</reg51>
+            <reg52>0x5e59,0x08</reg52>
+            <reg53>0x5e1a,0x00</reg53>
+            <reg54>0x5e1b,0x08</reg54>
+            <reg55>0x5e36,0x00</reg55>
+            <reg56>0x5e37,0x00</reg56>
+            <reg57>0x5e3a,0x00</reg57>
+            <reg58>0x5e3b,0x00</reg58>
+            <reg59>0x5e56,0x00</reg59>
+            <reg60>0x5e57,0x08</reg60>
+            <reg61>0x5e5a,0x00</reg61>
+            <reg62>0x5e5b,0x08</reg62>
+            <reg63>0x6ec0,0x04</reg63>
+            <reg64>0x6ec1,0xf0</reg64>
+            <reg65>0x6ec2,0x03</reg65>
+            <reg66>0x6ec3,0xb0</reg66>
+            <reg67>0x6ec4,0x04</reg67>
+            <reg68>0x6ec5,0xf0</reg68>
+            <reg69>0x6ec6,0x03</reg69>
+            <reg70>0x6ec7,0xb0</reg70>
+            <reg71>0x6ec8,0x04</reg71>
+            <reg72>0x6ec9,0xf0</reg72>
+            <reg73>0x6eca,0x03</reg73>
+            <reg74>0x6ecb,0xb0</reg74>
+        </AESaveData>
+        <NRSaveData>
+            <!--savepage reg list-->
+            <regCnt>75</regCnt>
+            <reg0>0x60dd,0x46</reg0>
+            <reg1>0x60de,0x08</reg1>
+            <reg2>0x60df,0x44</reg2>
+            <reg3>0x60b0,0x22</reg3>
+            <reg4>0x60b1,0x32</reg4>
+            <reg5>0x60b2,0x43</reg5>
+            <reg6>0x60b3,0x53</reg6>
+            <reg7>0x60b4,0x64</reg7>
+            <reg8>0x60b5,0x74</reg8>
+            <reg9>0x60b6,0x85</reg9>
+            <reg10>0x60b7,0x48</reg10>
+            <reg11>0x60b8,0x10</reg11>
+            <reg12>0x60b9,0x08</reg12>
+            <reg13>0x60ba,0x00</reg13>
+            <reg14>0x60c0,0x40</reg14>
+            <reg15>0x60c1,0x50</reg15>
+            <reg16>0x60c2,0x60</reg16>
+            <reg17>0x60c3,0x40</reg17>
+            <reg18>0x60c4,0x50</reg18>
+            <reg19>0x60c5,0x40</reg19>
+            <reg20>0x60c6,0x50</reg20>
+            <reg21>0x60c7,0x20</reg21>
+            <reg22>0x60c8,0x30</reg22>
+            <reg23>0x60c9,0x40</reg23>
+            <reg24>0x60ca,0x30</reg24>
+            <reg25>0x60cb,0x40</reg25>
+            <reg26>0x60cc,0x30</reg26>
+            <reg27>0x60cd,0x40</reg27>
+            <reg28>0x60ce,0x00</reg28>
+            <reg29>0x60cf,0x00</reg29>
+            <reg30>0x60d0,0x10</reg30>
+            <reg31>0x60d1,0x10</reg31>
+            <reg32>0x60d2,0x20</reg32>
+            <reg33>0x60d3,0x18</reg33>
+            <reg34>0x60d4,0x20</reg34>
+            <reg35>0x60e0,0x13</reg35>
+            <reg36>0x60e6,0x00</reg36>
+            <reg37>0x60ea,0x8a</reg37>
+            <reg38>0x60eb,0x8c</reg38>
+            <reg39>0x61b0,0x22</reg39>
+            <reg40>0x61b1,0x32</reg40>
+            <reg41>0x61b2,0x43</reg41>
+            <reg42>0x61b3,0x53</reg42>
+            <reg43>0x61b4,0x64</reg43>
+            <reg44>0x61b5,0x74</reg44>
+            <reg45>0x61b6,0x85</reg45>
+            <reg46>0x61b7,0x48</reg46>
+            <reg47>0x61b8,0x10</reg47>
+            <reg48>0x61b9,0x08</reg48>
+            <reg49>0x61ba,0x00</reg49>
+            <reg50>0x61c0,0x40</reg50>
+            <reg51>0x61c1,0x50</reg51>
+            <reg52>0x61c2,0x60</reg52>
+            <reg53>0x61c3,0x40</reg53>
+            <reg54>0x61c4,0x50</reg54>
+            <reg55>0x61c5,0x40</reg55>
+            <reg56>0x61c6,0x50</reg56>
+            <reg57>0x61c7,0x20</reg57>
+            <reg58>0x61c8,0x30</reg58>
+            <reg59>0x61c9,0x40</reg59>
+            <reg60>0x61ca,0x30</reg60>
+            <reg61>0x61cb,0x40</reg61>
+            <reg62>0x61cc,0x30</reg62>
+            <reg63>0x61cd,0x40</reg63>
+            <reg64>0x61ce,0x00</reg64>
+            <reg65>0x61cf,0x00</reg65>
+            <reg66>0x61d0,0x10</reg66>
+            <reg67>0x61d1,0x10</reg67>
+            <reg68>0x61d2,0x20</reg68>
+            <reg69>0x61d3,0x18</reg69>
+            <reg70>0x61d4,0x20</reg70>
+            <reg71>0x61e0,0x13</reg71>
+            <reg72>0x61e6,0x00</reg72>
+            <reg73>0x61ea,0x8a</reg73>
+            <reg74>0x61eb,0x8c</reg74>
+        </NRSaveData>
+        <SharpnessSaveData>
+            <!--savepage reg list-->
+            <regCnt>22</regCnt>
+            <reg0>0x60d5,0x66</reg0>
+            <reg1>0x60d6,0x66</reg1>
+            <reg2>0x60d7,0x66</reg2>
+            <reg3>0x60d8,0x44</reg3>
+            <reg4>0x60d9,0x22</reg4>
+            <reg5>0x60da,0x22</reg5>
+            <reg6>0x60db,0x22</reg6>
+            <reg7>0x60dc,0x66</reg7>
+            <reg8>0x60e0,0x13</reg8>
+            <reg9>0x60e2,0x20</reg9>
+            <reg10>0x60e6,0x00</reg10>
+            <reg11>0x61d5,0x66</reg11>
+            <reg12>0x61d6,0x66</reg12>
+            <reg13>0x61d7,0x66</reg13>
+            <reg14>0x61d8,0x44</reg14>
+            <reg15>0x61d9,0x22</reg15>
+            <reg16>0x61da,0x22</reg16>
+            <reg17>0x61db,0x22</reg17>
+            <reg18>0x61dc,0x66</reg18>
+            <reg19>0x61e0,0x13</reg19>
+            <reg20>0x61e6,0x00</reg20>
+            <reg21>0x61e2,0x20</reg21>
+        </SharpnessSaveData>
+        <TonemappingSaveData>
+            <!--savepage reg list-->
+            <regCnt>35</regCnt>
+            <!--Combine registers information-->
+            <reg0>0x5d02,0x01</reg0>
+            <reg1>0x5d03,0x00</reg1>
+            <reg2>0x5d04,0x02</reg2>
+            <reg3>0x5d05,0x00</reg3>
+            <reg4>0x5d06,0x04</reg4>
+            <reg5>0x5d07,0x00</reg5>
+            <reg6>0x5d08,0x10</reg6>
+            <reg7>0x5d09,0x00</reg7>
+            <reg8>0x5d0a,0x02</reg8>
+            <reg9>0x5d0b,0x80</reg9>
+            <reg10>0x5d0c,0x02</reg10>
+            <reg11>0x5d0d,0x00</reg11>
+            <reg12>0x5d0e,0x01</reg12>
+            <reg13>0x5d0f,0xa0</reg13>
+            <reg14>0x5d10,0x01</reg14>
+            <reg15>0x5d11,0x60</reg15>
+            <reg16>0x5d12,0x02</reg16>
+            <reg17>0x5d13,0xc0</reg17>
+            <reg18>0x5d14,0x02</reg18>
+            <reg19>0x5d15,0x40</reg19>
+            <reg20>0x5d16,0x01</reg20>
+            <reg21>0x5d17,0xe0</reg21>
+            <reg22>0x5d18,0x01</reg22>
+            <reg23>0x5d19,0x80</reg23>
+            <reg24>0x5d26,0x02</reg24>
+            <reg25>0x5d27,0x06</reg25>
+            <reg26>0x5d28,0x07</reg26>
+            <reg27>0x5d29,0x08</reg27>
+            <reg28>0x5b01,0x08</reg28>
+            <reg29>0x5b35,0x40</reg29>
+            <reg30>0x5b36,0x40</reg30>
+            <reg31>0x5b37,0x80</reg31>
+            <reg32>0x5b38,0x40</reg32>
+            <reg33>0x5b39,0x40</reg33>
+            <reg34>0x5b3a,0x80</reg34>
+            <!--Tonemapping registers information-->
+        </TonemappingSaveData>
+        <AWBSaveData>
+            <!--savepage reg list-->
+            <regCnt>44</regCnt>
+            <reg0>0x5aa8,0x00</reg0>
+            <reg1>0x5aa9,0xf0</reg1>
+            <reg2>0x5aaa,0x00</reg2>
+            <reg3>0x5aab,0xa0</reg3>
+            <reg4>0x5ab0,0x81</reg4>
+            <reg5>0x5ab1,0x09</reg5>
+            <reg6>0x5ab2,0x58</reg6>
+            <reg7>0x5ab3,0xa0</reg7>
+            <reg8>0x5ab4,0x48</reg8>
+            <reg9>0x5ab5,0x90</reg9>
+            <reg10>0x5ab6,0x58</reg10>
+            <reg11>0x5ab7,0x70</reg11>
+            <reg12>0x5ab8,0x5c</reg12>
+            <reg13>0x5ab9,0x90</reg13>
+            <reg14>0x5abc,0x78</reg14>
+            <reg15>0x5abd,0x5d</reg15>
+            <reg16>0x5abe,0x40</reg16>
+            <reg17>0x5abf,0x4f</reg17>
+            <reg18>0x5ac0,0x08</reg18>
+            <reg19>0x5ac1,0x44</reg19>
+            <reg20>0x5ac2,0x8a</reg20>
+            <reg21>0x5ac3,0x8a</reg21>
+            <reg22>0x5ace,0x1d</reg22>
+            <reg23>0x5acf,0x24</reg23>
+            <reg24>0x5ad0,0x20</reg24>
+            <reg25>0x5ad1,0x2c</reg25>
+            <reg26>0x5ad2,0x14</reg26>
+            <reg27>0x5ad3,0x20</reg27>
+            <reg28>0x5ad4,0x1a</reg28>
+            <reg29>0x5ad5,0x22</reg29>
+            <reg30>0x5ad6,0x1a</reg30>
+            <reg31>0x5ad7,0x21</reg31>
+            <reg32>0x5ad8,0x19</reg32>
+            <reg33>0x5ad9,0x23</reg33>
+            <reg34>0x5ada,0x19</reg34>
+            <reg35>0x5adb,0x20</reg35>
+            <reg36>0x5adc,0x13</reg36>
+            <reg37>0x5add,0x1b</reg37>
+            <reg38>0x5ade,0x23</reg38>
+            <reg39>0x5adf,0x34</reg39>
+            <reg40>0x5ae3,0x00</reg40>
+            <reg41>0x5ae4,0x00</reg41>
+            <reg42>0x5ae5,0x00</reg42>
+            <reg43>0x5ae8,0x00</reg43>
+        </AWBSaveData>
+        <ContrastSaveData>
+            <!--savepage reg list-->
+            <regCnt>20</regCnt>
+            <reg0>0x510a,0x18</reg0>
+            <reg1>0x510b,0x00</reg1>
+            <reg2>0x510c,0x01</reg2>
+            <reg3>0x510d,0x00</reg3>
+            <reg4>0x510e,0x00</reg4>
+            <reg5>0x510f,0x40</reg5>
+            <reg6>0x5110,0x00</reg6>
+            <reg7>0x5111,0x60</reg7>
+            <reg8>0x5112,0x0f</reg8>
+            <reg9>0x5113,0xff</reg9>
+            <reg10>0x51ee,0x00</reg10>
+            <reg11>0x51ef,0x20</reg11>
+            <reg12>0x51f0,0x00</reg12>
+            <reg13>0x51f1,0x20</reg13>
+            <reg14>0x51f2,0x0f</reg14>
+            <reg15>0x51f3,0xff</reg15>
+            <reg16>0x51e6,0x00</reg16>
+            <reg17>0x51e7,0x20</reg17>
+            <reg18>0x51e8,0x00</reg18>
+            <reg19>0x51e9,0x7f</reg19>
+        </ContrastSaveData>
+        <ContrastSaveData_122>
+            <!--savepage reg list-->
+            <regCnt>30</regCnt>
+            <reg0>0x500c,0xcc</reg0>
+            <reg1>0x5280,0x01</reg1>
+            <reg2>0x5290,0x40</reg2>
+            <reg3>0x5291,0x40</reg3>
+            <reg4>0x5292,0x40</reg4>
+            <reg5>0x5293,0x40</reg5>
+            <reg6>0x5294,0x40</reg6>
+            <reg7>0x5295,0x40</reg7>
+            <reg8>0x5296,0x40</reg8>
+            <reg9>0x5297,0x40</reg9>
+            <reg10>0x5298,0x40</reg10>
+            <reg11>0x5299,0x40</reg11>
+            <reg12>0x529a,0x40</reg12>
+            <reg13>0x529b,0x40</reg13>
+            <reg14>0x529c,0x40</reg14>
+            <reg15>0x529d,0x40</reg15>
+            <reg16>0x529e,0x40</reg16>
+            <reg17>0x529f,0x40</reg17>
+            <reg18>0x510e,0x00</reg18>
+            <reg19>0x510f,0x10</reg19>
+            <reg20>0x5110,0x00</reg20>
+            <reg21>0x5111,0x20</reg21>
+            <reg22>0x51ee,0x00</reg22>
+            <reg23>0x51ef,0x20</reg23>
+            <reg24>0x51f0,0x00</reg24>
+            <reg25>0x51f1,0x20</reg25>
+            <reg26>0x51e6,0x00</reg26>
+            <reg27>0x51e7,0x20</reg27>
+            <reg28>0x51e8,0x00</reg28>
+            <reg29>0x51e9,0x7f</reg29>
+        </ContrastSaveData_122>
+        <SaturationSaveData>
+            <!--savepage reg list-->
+            <regCnt>6</regCnt>
+            <reg0>0x5100,0x15</reg0>
+            <reg1>0x5107,0x88</reg1>
+            <reg2>0x51de,0x26</reg2>
+            <reg3>0x51dc,0x00</reg3>
+            <reg4>0x51dd,0xff</reg4>
+            <reg5>0x51df,0x40</reg5>
+        </SaturationSaveData>
+        <HDRSaveData_122>
+            <!--savepage reg list-->
+            <!--Tonemapping reg list-->
+            <regCnt>0</regCnt>
+            <!--Combine reg list-->
+        </HDRSaveData_122>
+        <AE122SaveData>
+            <!--savepage reg list-->
+            <regCnt>0</regCnt>
+        </AE122SaveData>
+        <Saturation122SaveData>
+            <!--savepage reg list-->
+            <regCnt>0</regCnt>
+        </Saturation122SaveData>
+        <CAC122SaveData>
+            <!--savepage reg list-->
+            <regCnt>0</regCnt>
+        </CAC122SaveData>
+    </SavePageData>
+</sensorDriverData>
